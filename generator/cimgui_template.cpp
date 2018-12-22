@@ -55,4 +55,49 @@ CIMGUI_API void ImVector_ImWchar_UnInit(ImVector_ImWchar* p)
 {
 	p->~ImVector<ImWchar>();
 }
+////
+struct CimguiStorage
+{
+    void(*Platform_GetWindowPos)(ImGuiViewport* vp, ImVec2* out_pos);
+    void(*Platform_GetWindowSize)(ImGuiViewport* vp, ImVec2* out_pos);
+};
+
+CimguiStorage& GetCimguiStorage()
+{
+    ImGuiIO& io = ImGui::GetIO();
+    if (io.BackendLanguageUserData == NULL)
+    {
+        io.BackendLanguageUserData = new CimguiStorage();
+    }
+
+    return *(CimguiStorage*)io.BackendLanguageUserData;
+}
+
+ImVec2 Platform_GetWindowPos_hook(ImGuiViewport* vp)
+    {
+        ImVec2 pos;
+        GetCimguiStorage().Platform_GetWindowPos(vp, &pos);
+        return pos;
+    };
+
+CIMGUI_API void ImGuiPlatformIO_Set_Platform_GetWindowPos(ImGuiPlatformIO* platform_io, void(*user_callback)(ImGuiViewport* vp, ImVec2* out_pos))
+{
+    CimguiStorage storage = GetCimguiStorage();
+    storage.Platform_GetWindowPos = user_callback;
+    platform_io->Platform_GetWindowPos = &Platform_GetWindowPos_hook;
+}
+
+ImVec2 Platform_GetWindowSize_hook(ImGuiViewport* vp)
+    {
+        ImVec2 pos;
+        GetCimguiStorage().Platform_GetWindowSize(vp, &pos);
+        return pos;
+    };
+
+CIMGUI_API void ImGuiPlatformIO_Set_Platform_GetWindowSize(ImGuiPlatformIO* platform_io, void(*user_callback)(ImGuiViewport* vp, ImVec2* out_size))
+{
+    CimguiStorage storage = GetCimguiStorage();
+    storage.Platform_GetWindowSize = user_callback;
+    platform_io->Platform_GetWindowSize = &Platform_GetWindowSize_hook;
+}
 

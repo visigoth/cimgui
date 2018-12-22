@@ -4406,6 +4406,74 @@
       "stname": "ImGuiPayload"
     }
   ],
+  "ImGuiPlatformIO_ImGuiPlatformIO": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImGuiPlatformIO_ImGuiPlatformIO",
+      "comment": "",
+      "constructor": true,
+      "defaults": [],
+      "funcname": "ImGuiPlatformIO",
+      "signature": "()",
+      "stname": "ImGuiPlatformIO"
+    }
+  ],
+  "ImGuiPlatformIO_destroy": [
+    {
+      "args": "(ImGuiPlatformIO* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImGuiPlatformIO*"
+        }
+      ],
+      "call_args": "(self)",
+      "cimguiname": "ImGuiPlatformIO_destroy",
+      "defaults": [],
+      "destructor": true,
+      "ov_cimguiname": "ImGuiPlatformIO_destroy",
+      "ret": "void",
+      "signature": "(ImGuiPlatformIO*)",
+      "stname": "ImGuiPlatformIO"
+    }
+  ],
+  "ImGuiPlatformMonitor_ImGuiPlatformMonitor": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImGuiPlatformMonitor_ImGuiPlatformMonitor",
+      "comment": "",
+      "constructor": true,
+      "defaults": [],
+      "funcname": "ImGuiPlatformMonitor",
+      "signature": "()",
+      "stname": "ImGuiPlatformMonitor"
+    }
+  ],
+  "ImGuiPlatformMonitor_destroy": [
+    {
+      "args": "(ImGuiPlatformMonitor* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImGuiPlatformMonitor*"
+        }
+      ],
+      "call_args": "(self)",
+      "cimguiname": "ImGuiPlatformMonitor_destroy",
+      "defaults": [],
+      "destructor": true,
+      "ov_cimguiname": "ImGuiPlatformMonitor_destroy",
+      "ret": "void",
+      "signature": "(ImGuiPlatformMonitor*)",
+      "stname": "ImGuiPlatformMonitor"
+    }
+  ],
   "ImGuiStorage_BuildSortByKey": [
     {
       "args": "(ImGuiStorage* self)",
@@ -5272,6 +5340,40 @@
       "stname": "ImGuiTextFilter"
     }
   ],
+  "ImGuiViewport_ImGuiViewport": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImGuiViewport_ImGuiViewport",
+      "comment": "",
+      "constructor": true,
+      "defaults": [],
+      "funcname": "ImGuiViewport",
+      "signature": "()",
+      "stname": "ImGuiViewport"
+    }
+  ],
+  "ImGuiViewport_destroy": [
+    {
+      "args": "(ImGuiViewport* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImGuiViewport*"
+        }
+      ],
+      "call_args": "(self)",
+      "cimguiname": "ImGuiViewport_destroy",
+      "defaults": [],
+      "destructor": true,
+      "ov_cimguiname": "ImGuiViewport_destroy",
+      "ret": "void",
+      "signature": "(ImGuiViewport*)",
+      "stname": "ImGuiViewport"
+    }
+  ],
   "ImVec2_ImVec2": [
     {
       "args": "()",
@@ -6111,6 +6213,63 @@
       "stname": "ImGui"
     }
   ],
+  "igBeginTabBar": [
+    {
+      "args": "(const char* str_id,ImGuiTabBarFlags flags)",
+      "argsT": [
+        {
+          "name": "str_id",
+          "type": "const char*"
+        },
+        {
+          "name": "flags",
+          "type": "ImGuiTabBarFlags"
+        }
+      ],
+      "argsoriginal": "(const char* str_id,ImGuiTabBarFlags flags=0)",
+      "call_args": "(str_id,flags)",
+      "cimguiname": "igBeginTabBar",
+      "comment": "",
+      "defaults": {
+        "flags": "0"
+      },
+      "funcname": "BeginTabBar",
+      "ret": "bool",
+      "signature": "(const char*,ImGuiTabBarFlags)",
+      "stname": "ImGui"
+    }
+  ],
+  "igBeginTabItem": [
+    {
+      "args": "(const char* label,bool* p_open,ImGuiTabItemFlags flags)",
+      "argsT": [
+        {
+          "name": "label",
+          "type": "const char*"
+        },
+        {
+          "name": "p_open",
+          "type": "bool*"
+        },
+        {
+          "name": "flags",
+          "type": "ImGuiTabItemFlags"
+        }
+      ],
+      "argsoriginal": "(const char* label,bool* p_open=((void *)0),ImGuiTabItemFlags flags=0)",
+      "call_args": "(label,p_open,flags)",
+      "cimguiname": "igBeginTabItem",
+      "comment": "",
+      "defaults": {
+        "flags": "0",
+        "p_open": "((void *)0)"
+      },
+      "funcname": "BeginTabItem",
+      "ret": "bool",
+      "signature": "(const char*,bool*,ImGuiTabItemFlags)",
+      "stname": "ImGui"
+    }
+  ],
   "igBeginTooltip": [
     {
       "args": "()",
@@ -6378,19 +6537,19 @@
   ],
   "igCaptureKeyboardFromApp": [
     {
-      "args": "(bool capture)",
+      "args": "(bool want_capture_keyboard_value)",
       "argsT": [
         {
-          "name": "capture",
+          "name": "want_capture_keyboard_value",
           "type": "bool"
         }
       ],
-      "argsoriginal": "(bool capture=true)",
-      "call_args": "(capture)",
+      "argsoriginal": "(bool want_capture_keyboard_value=true)",
+      "call_args": "(want_capture_keyboard_value)",
       "cimguiname": "igCaptureKeyboardFromApp",
       "comment": "",
       "defaults": {
-        "capture": "true"
+        "want_capture_keyboard_value": "true"
       },
       "funcname": "CaptureKeyboardFromApp",
       "ret": "void",
@@ -6400,19 +6559,19 @@
   ],
   "igCaptureMouseFromApp": [
     {
-      "args": "(bool capture)",
+      "args": "(bool want_capture_mouse_value)",
       "argsT": [
         {
-          "name": "capture",
+          "name": "want_capture_mouse_value",
           "type": "bool"
         }
       ],
-      "argsoriginal": "(bool capture=true)",
-      "call_args": "(capture)",
+      "argsoriginal": "(bool want_capture_mouse_value=true)",
+      "call_args": "(want_capture_mouse_value)",
       "cimguiname": "igCaptureMouseFromApp",
       "comment": "",
       "defaults": {
-        "capture": "true"
+        "want_capture_mouse_value": "true"
       },
       "funcname": "CaptureMouseFromApp",
       "ret": "void",
@@ -7098,6 +7257,21 @@
       "funcname": "DestroyContext",
       "ret": "void",
       "signature": "(ImGuiContext*)",
+      "stname": "ImGui"
+    }
+  ],
+  "igDestroyPlatformWindows": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "igDestroyPlatformWindows",
+      "comment": "",
+      "defaults": [],
+      "funcname": "DestroyPlatformWindows",
+      "ret": "void",
+      "signature": "()",
       "stname": "ImGui"
     }
   ],
@@ -7904,6 +8078,36 @@
       "stname": "ImGui"
     }
   ],
+  "igEndTabBar": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "igEndTabBar",
+      "comment": "",
+      "defaults": [],
+      "funcname": "EndTabBar",
+      "ret": "void",
+      "signature": "()",
+      "stname": "ImGui"
+    }
+  ],
+  "igEndTabItem": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "igEndTabItem",
+      "comment": "",
+      "defaults": [],
+      "funcname": "EndTabItem",
+      "ret": "void",
+      "signature": "()",
+      "stname": "ImGui"
+    }
+  ],
   "igEndTooltip": [
     {
       "args": "()",
@@ -7916,6 +8120,26 @@
       "funcname": "EndTooltip",
       "ret": "void",
       "signature": "()",
+      "stname": "ImGui"
+    }
+  ],
+  "igFindViewportByPlatformHandle": [
+    {
+      "args": "(void* platform_handle)",
+      "argsT": [
+        {
+          "name": "platform_handle",
+          "type": "void*"
+        }
+      ],
+      "argsoriginal": "(void* platform_handle)",
+      "call_args": "(platform_handle)",
+      "cimguiname": "igFindViewportByPlatformHandle",
+      "comment": "",
+      "defaults": [],
+      "funcname": "FindViewportByPlatformHandle",
+      "ret": "ImGuiViewport*",
+      "signature": "(void*)",
       "stname": "ImGui"
     }
   ],
@@ -8839,6 +9063,21 @@
       "stname": "ImGui"
     }
   ],
+  "igGetMainViewport": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "igGetMainViewport",
+      "comment": "",
+      "defaults": [],
+      "funcname": "GetMainViewport",
+      "ret": "ImGuiViewport*",
+      "signature": "()",
+      "stname": "ImGui"
+    }
+  ],
   "igGetMouseCursor": [
     {
       "args": "()",
@@ -9052,7 +9291,43 @@
       "comment": "",
       "defaults": [],
       "funcname": "GetOverlayDrawList",
+      "ov_cimguiname": "igGetOverlayDrawList",
       "ret": "ImDrawList*",
+      "signature": "()",
+      "stname": "ImGui"
+    },
+    {
+      "args": "(ImGuiViewport* viewport)",
+      "argsT": [
+        {
+          "name": "viewport",
+          "type": "ImGuiViewport*"
+        }
+      ],
+      "argsoriginal": "(ImGuiViewport* viewport)",
+      "call_args": "(viewport)",
+      "cimguiname": "igGetOverlayDrawList",
+      "comment": "",
+      "defaults": [],
+      "funcname": "GetOverlayDrawList",
+      "ov_cimguiname": "igGetOverlayDrawListViewportPtr",
+      "ret": "ImDrawList*",
+      "signature": "(ImGuiViewport*)",
+      "stname": "ImGui"
+    }
+  ],
+  "igGetPlatformIO": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "igGetPlatformIO",
+      "comment": "",
+      "defaults": [],
+      "funcname": "GetPlatformIO",
+      "ret": "ImGuiPlatformIO*",
+      "retref": "&",
       "signature": "()",
       "stname": "ImGui"
     }
@@ -9381,6 +9656,21 @@
       "stname": "ImGui"
     }
   ],
+  "igGetWindowDpiScale": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "igGetWindowDpiScale",
+      "comment": "",
+      "defaults": [],
+      "funcname": "GetWindowDpiScale",
+      "ret": "float",
+      "signature": "()",
+      "stname": "ImGui"
+    }
+  ],
   "igGetWindowDrawList": [
     {
       "args": "()",
@@ -9509,6 +9799,21 @@
       "ov_cimguiname": "igGetWindowSize_nonUDT2",
       "ret": "ImVec2_Simple",
       "retorig": "ImVec2",
+      "signature": "()",
+      "stname": "ImGui"
+    }
+  ],
+  "igGetWindowViewport": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "igGetWindowViewport",
+      "comment": "",
+      "defaults": [],
+      "funcname": "GetWindowViewport",
+      "ret": "ImGuiViewport*",
       "signature": "()",
       "stname": "ImGui"
     }
@@ -12043,19 +12348,19 @@
   ],
   "igPushTextWrapPos": [
     {
-      "args": "(float wrap_pos_x)",
+      "args": "(float wrap_local_pos_x)",
       "argsT": [
         {
-          "name": "wrap_pos_x",
+          "name": "wrap_local_pos_x",
           "type": "float"
         }
       ],
-      "argsoriginal": "(float wrap_pos_x=0.0f)",
-      "call_args": "(wrap_pos_x)",
+      "argsoriginal": "(float wrap_local_pos_x=0.0f)",
+      "call_args": "(wrap_local_pos_x)",
       "cimguiname": "igPushTextWrapPos",
       "comment": "",
       "defaults": {
-        "wrap_pos_x": "0.0f"
+        "wrap_local_pos_x": "0.0f"
       },
       "funcname": "PushTextWrapPos",
       "ret": "void",
@@ -12130,6 +12435,33 @@
       "stname": "ImGui"
     }
   ],
+  "igRenderPlatformWindowsDefault": [
+    {
+      "args": "(void* platform_arg,void* renderer_arg)",
+      "argsT": [
+        {
+          "name": "platform_arg",
+          "type": "void*"
+        },
+        {
+          "name": "renderer_arg",
+          "type": "void*"
+        }
+      ],
+      "argsoriginal": "(void* platform_arg=((void *)0),void* renderer_arg=((void *)0))",
+      "call_args": "(platform_arg,renderer_arg)",
+      "cimguiname": "igRenderPlatformWindowsDefault",
+      "comment": "",
+      "defaults": {
+        "platform_arg": "((void *)0)",
+        "renderer_arg": "((void *)0)"
+      },
+      "funcname": "RenderPlatformWindowsDefault",
+      "ret": "void",
+      "signature": "(void*,void*)",
+      "stname": "ImGui"
+    }
+  ],
   "igResetMouseDragDelta": [
     {
       "args": "(int button)",
@@ -12154,10 +12486,10 @@
   ],
   "igSameLine": [
     {
-      "args": "(float pos_x,float spacing_w)",
+      "args": "(float local_pos_x,float spacing_w)",
       "argsT": [
         {
-          "name": "pos_x",
+          "name": "local_pos_x",
           "type": "float"
         },
         {
@@ -12165,12 +12497,12 @@
           "type": "float"
         }
       ],
-      "argsoriginal": "(float pos_x=0.0f,float spacing_w=-1.0f)",
-      "call_args": "(pos_x,spacing_w)",
+      "argsoriginal": "(float local_pos_x=0.0f,float spacing_w=-1.0f)",
+      "call_args": "(local_pos_x,spacing_w)",
       "cimguiname": "igSameLine",
       "comment": "",
       "defaults": {
-        "pos_x": "0.0f",
+        "local_pos_x": "0.0f",
         "spacing_w": "-1.0f"
       },
       "funcname": "SameLine",
@@ -12471,15 +12803,15 @@
   ],
   "igSetCursorPosX": [
     {
-      "args": "(float x)",
+      "args": "(float local_x)",
       "argsT": [
         {
-          "name": "x",
+          "name": "local_x",
           "type": "float"
         }
       ],
-      "argsoriginal": "(float x)",
-      "call_args": "(x)",
+      "argsoriginal": "(float local_x)",
+      "call_args": "(local_x)",
       "cimguiname": "igSetCursorPosX",
       "comment": "",
       "defaults": [],
@@ -12491,15 +12823,15 @@
   ],
   "igSetCursorPosY": [
     {
-      "args": "(float y)",
+      "args": "(float local_y)",
       "argsT": [
         {
-          "name": "y",
+          "name": "local_y",
           "type": "float"
         }
       ],
-      "argsoriginal": "(float y)",
-      "call_args": "(y)",
+      "argsoriginal": "(float local_y)",
+      "call_args": "(local_y)",
       "cimguiname": "igSetCursorPosY",
       "comment": "",
       "defaults": [],
@@ -12511,15 +12843,15 @@
   ],
   "igSetCursorScreenPos": [
     {
-      "args": "(const ImVec2 screen_pos)",
+      "args": "(const ImVec2 pos)",
       "argsT": [
         {
-          "name": "screen_pos",
+          "name": "pos",
           "type": "const ImVec2"
         }
       ],
-      "argsoriginal": "(const ImVec2& screen_pos)",
-      "call_args": "(screen_pos)",
+      "argsoriginal": "(const ImVec2& pos)",
+      "call_args": "(pos)",
       "cimguiname": "igSetCursorScreenPos",
       "comment": "",
       "defaults": [],
@@ -12834,12 +13166,32 @@
       "stname": "ImGui"
     }
   ],
-  "igSetScrollFromPosY": [
+  "igSetNextWindowViewport": [
     {
-      "args": "(float pos_y,float center_y_ratio)",
+      "args": "(ImGuiID viewport_id)",
       "argsT": [
         {
-          "name": "pos_y",
+          "name": "viewport_id",
+          "type": "ImGuiID"
+        }
+      ],
+      "argsoriginal": "(ImGuiID viewport_id)",
+      "call_args": "(viewport_id)",
+      "cimguiname": "igSetNextWindowViewport",
+      "comment": "",
+      "defaults": [],
+      "funcname": "SetNextWindowViewport",
+      "ret": "void",
+      "signature": "(ImGuiID)",
+      "stname": "ImGui"
+    }
+  ],
+  "igSetScrollFromPosY": [
+    {
+      "args": "(float local_y,float center_y_ratio)",
+      "argsT": [
+        {
+          "name": "local_y",
           "type": "float"
         },
         {
@@ -12847,8 +13199,8 @@
           "type": "float"
         }
       ],
-      "argsoriginal": "(float pos_y,float center_y_ratio=0.5f)",
-      "call_args": "(pos_y,center_y_ratio)",
+      "argsoriginal": "(float local_y,float center_y_ratio=0.5f)",
+      "call_args": "(local_y,center_y_ratio)",
       "cimguiname": "igSetScrollFromPosY",
       "comment": "",
       "defaults": {
@@ -12939,6 +13291,26 @@
       "funcname": "SetStateStorage",
       "ret": "void",
       "signature": "(ImGuiStorage*)",
+      "stname": "ImGui"
+    }
+  ],
+  "igSetTabItemClosed": [
+    {
+      "args": "(const char* tab_or_docked_window_label)",
+      "argsT": [
+        {
+          "name": "tab_or_docked_window_label",
+          "type": "const char*"
+        }
+      ],
+      "argsoriginal": "(const char* tab_or_docked_window_label)",
+      "call_args": "(tab_or_docked_window_label)",
+      "cimguiname": "igSetTabItemClosed",
+      "comment": "",
+      "defaults": [],
+      "funcname": "SetTabItemClosed",
+      "ret": "void",
+      "signature": "(const char*)",
       "stname": "ImGui"
     }
   ],
@@ -14529,6 +14901,21 @@
       "funcname": "Unindent",
       "ret": "void",
       "signature": "(float)",
+      "stname": "ImGui"
+    }
+  ],
+  "igUpdatePlatformWindows": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "igUpdatePlatformWindows",
+      "comment": "",
+      "defaults": [],
+      "funcname": "UpdatePlatformWindows",
+      "ret": "void",
+      "signature": "()",
       "stname": "ImGui"
     }
   ],

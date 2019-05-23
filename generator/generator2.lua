@@ -149,10 +149,11 @@ local prepro = {
     end
     local function location_it()
         repeat
+			local comment
             local line = file:read"*l"
 
             if not line then return nil end
-            line,_ = split_comment(line)
+            line,comment = split_comment(line)
             --if line:sub(1,1) == "#" then
             if line:match("^%s*#") then
                 
@@ -180,7 +181,7 @@ local prepro = {
                 line = line:gsub("IMGUI_IMPL_API","")
                 -- drop IMGUI_API
                 line = line:gsub("IMGUI_API","")
-                return line,locats[1]
+                return line..(comment or ""),locats[1]
             end
         until false
     end

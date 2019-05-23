@@ -8,7 +8,7 @@ local script_args = {...}
 local COMPILER = script_args[1]
 local CPRE,CTEST
 if COMPILER == "gcc" or COMPILER == "clang" then
-    CPRE = COMPILER..[[ -E -DIMGUI_DISABLE_OBSOLETE_FUNCTIONS -DIMGUI_API="" -DIMGUI_IMPL_API="" ]]
+    CPRE = COMPILER..[[ -E -C -DIMGUI_DISABLE_OBSOLETE_FUNCTIONS -DIMGUI_API="" -DIMGUI_IMPL_API="" ]]
     CTEST = COMPILER.." --version"
 elseif COMPILER == "cl" then
     CPRE = COMPILER..[[ /E /DIMGUI_DISABLE_OBSOLETE_FUNCTIONS /DIMGUI_API="" /DIMGUI_IMPL_API="" ]]
@@ -238,7 +238,7 @@ local function func_header_generate(FP)
         local manual = FP.get_manuals(def)
         if not manual and not def.templated then
 
-            local addcoment = def.comment or ""
+            local addcoment = "" --def.comment or ""
             local empty = def.args:match("^%(%)") --no args
             if def.constructor then
                 assert(def.stname ~= "","constructor without struct")
@@ -478,6 +478,7 @@ local function cimgui_generation(parser)
 
     hstrfile = hstrfile:gsub([[#include "imgui_structs%.h"]],cstructsstr)
     local cfuncsstr = func_header_generate(parser)
+	--save_data("./cfuncsstr.txt",cfuncsstr)
     hstrfile = hstrfile:gsub([[#include "auto_funcs%.h"]],cfuncsstr)
     save_data("./output/cimgui.h",cimgui_header,hstrfile)
     
@@ -536,16 +537,16 @@ if not pipe then
     error("could not execute gcc "..err)
 end
 
---local file,err = io.open("output_compiler.txt","w")
---if not file then error(err) end
+local file,err = io.open("output_compiler.txt","w")
+if not file then error(err) end
 
 local iterator = (HAVE_COMPILER and cpp2ffi.location) or filelines
 
 for line in iterator(pipe,{"imgui"},{}) do
 	parser1:insert(line)
-	--file:write(line)
+	file:write(line.."\n")
 end
---file:close()
+file:close()
 pipe:close()
 
 parser1:do_parse()

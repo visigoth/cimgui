@@ -3,46 +3,55 @@
     "ImDrawCornerFlags_": [
       {
         "calc_value": 1,
+        "comment": " // 0x1",
         "name": "ImDrawCornerFlags_TopLeft",
         "value": "1 << 0"
       },
       {
         "calc_value": 2,
+        "comment": " // 0x2",
         "name": "ImDrawCornerFlags_TopRight",
         "value": "1 << 1"
       },
       {
         "calc_value": 4,
+        "comment": " // 0x4",
         "name": "ImDrawCornerFlags_BotLeft",
         "value": "1 << 2"
       },
       {
         "calc_value": 8,
+        "comment": " // 0x8",
         "name": "ImDrawCornerFlags_BotRight",
         "value": "1 << 3"
       },
       {
         "calc_value": 3,
+        "comment": " // 0x3",
         "name": "ImDrawCornerFlags_Top",
         "value": "ImDrawCornerFlags_TopLeft | ImDrawCornerFlags_TopRight"
       },
       {
         "calc_value": 12,
+        "comment": " // 0xC",
         "name": "ImDrawCornerFlags_Bot",
         "value": "ImDrawCornerFlags_BotLeft | ImDrawCornerFlags_BotRight"
       },
       {
         "calc_value": 5,
+        "comment": " // 0x5",
         "name": "ImDrawCornerFlags_Left",
         "value": "ImDrawCornerFlags_TopLeft | ImDrawCornerFlags_BotLeft"
       },
       {
         "calc_value": 10,
+        "comment": " // 0xA",
         "name": "ImDrawCornerFlags_Right",
         "value": "ImDrawCornerFlags_TopRight | ImDrawCornerFlags_BotRight"
       },
       {
         "calc_value": 15,
+        "comment": " // In your function calls you may use ~0 (= all bits sets) instead of ImDrawCornerFlags_All, as a convenience",
         "name": "ImDrawCornerFlags_All",
         "value": "0xF"
       }
@@ -55,11 +64,13 @@
       },
       {
         "calc_value": 1,
+        "comment": " // Lines are anti-aliased (*2 the number of triangles for 1.0f wide line, otherwise *3 the number of triangles)",
         "name": "ImDrawListFlags_AntiAliasedLines",
         "value": "1 << 0"
       },
       {
         "calc_value": 2,
+        "comment": " // Filled shapes have anti-aliased edges (*2 the number of vertices)",
         "name": "ImDrawListFlags_AntiAliasedFill",
         "value": "1 << 1"
       }
@@ -72,11 +83,13 @@
       },
       {
         "calc_value": 1,
+        "comment": " // Don't round the height to next power of two",
         "name": "ImFontAtlasFlags_NoPowerOfTwoHeight",
         "value": "1 << 0"
       },
       {
         "calc_value": 2,
+        "comment": " // Don't build software mouse cursors into the atlas",
         "name": "ImFontAtlasFlags_NoMouseCursors",
         "value": "1 << 1"
       }
@@ -89,16 +102,19 @@
       },
       {
         "calc_value": 1,
+        "comment": " // Back-end supports gamepad and currently has one connected.",
         "name": "ImGuiBackendFlags_HasGamepad",
         "value": "1 << 0"
       },
       {
         "calc_value": 2,
+        "comment": " // Back-end supports honoring GetMouseCursor() value to change the OS cursor shape.",
         "name": "ImGuiBackendFlags_HasMouseCursors",
         "value": "1 << 1"
       },
       {
         "calc_value": 4,
+        "comment": " // Back-end supports io.WantSetMousePos requests to reposition the OS mouse position (only used if ImGuiConfigFlags_NavEnableSetMousePos is set).",
         "name": "ImGuiBackendFlags_HasSetMousePos",
         "value": "1 << 2"
       }
@@ -116,16 +132,19 @@
       },
       {
         "calc_value": 2,
+        "comment": " // Background of normal windows",
         "name": "ImGuiCol_WindowBg",
         "value": 2
       },
       {
         "calc_value": 3,
+        "comment": " // Background of child windows",
         "name": "ImGuiCol_ChildBg",
         "value": 3
       },
       {
         "calc_value": 4,
+        "comment": " // Background of popups, menus, tooltips windows",
         "name": "ImGuiCol_PopupBg",
         "value": 4
       },
@@ -141,6 +160,7 @@
       },
       {
         "calc_value": 7,
+        "comment": " // Background of checkbox, radio button, plot, slider, text input",
         "name": "ImGuiCol_FrameBg",
         "value": 7
       },
@@ -326,21 +346,25 @@
       },
       {
         "calc_value": 44,
+        "comment": " // Gamepad/keyboard: current highlighted item",
         "name": "ImGuiCol_NavHighlight",
         "value": 44
       },
       {
         "calc_value": 45,
+        "comment": " // Highlight window when using CTRL+TAB",
         "name": "ImGuiCol_NavWindowingHighlight",
         "value": 45
       },
       {
         "calc_value": 46,
+        "comment": " // Darken/colorize entire screen behind the CTRL+TAB window list, when active",
         "name": "ImGuiCol_NavWindowingDimBg",
         "value": 46
       },
       {
         "calc_value": 47,
+        "comment": " // Darken/colorize entire screen behind a modal window, when one is active",
         "name": "ImGuiCol_ModalWindowDimBg",
         "value": 47
       },
@@ -358,111 +382,133 @@
       },
       {
         "calc_value": 2,
+        "comment": " //              // ColorEdit, ColorPicker, ColorButton: ignore Alpha component (will only read 3 components from the input pointer).",
         "name": "ImGuiColorEditFlags_NoAlpha",
         "value": "1 << 1"
       },
       {
         "calc_value": 4,
+        "comment": " //              // ColorEdit: disable picker when clicking on colored square.",
         "name": "ImGuiColorEditFlags_NoPicker",
         "value": "1 << 2"
       },
       {
         "calc_value": 8,
+        "comment": " //              // ColorEdit: disable toggling options menu when right-clicking on inputs/small preview.",
         "name": "ImGuiColorEditFlags_NoOptions",
         "value": "1 << 3"
       },
       {
         "calc_value": 16,
+        "comment": " //              // ColorEdit, ColorPicker: disable colored square preview next to the inputs. (e.g. to show only the inputs)",
         "name": "ImGuiColorEditFlags_NoSmallPreview",
         "value": "1 << 4"
       },
       {
         "calc_value": 32,
+        "comment": " //              // ColorEdit, ColorPicker: disable inputs sliders/text widgets (e.g. to show only the small preview colored square).",
         "name": "ImGuiColorEditFlags_NoInputs",
         "value": "1 << 5"
       },
       {
         "calc_value": 64,
+        "comment": " //              // ColorEdit, ColorPicker, ColorButton: disable tooltip when hovering the preview.",
         "name": "ImGuiColorEditFlags_NoTooltip",
         "value": "1 << 6"
       },
       {
         "calc_value": 128,
+        "comment": " //              // ColorEdit, ColorPicker: disable display of inline text label (the label is still forwarded to the tooltip and picker).",
         "name": "ImGuiColorEditFlags_NoLabel",
         "value": "1 << 7"
       },
       {
         "calc_value": 256,
+        "comment": " //              // ColorPicker: disable bigger color preview on right side of the picker, use small colored square preview instead.",
         "name": "ImGuiColorEditFlags_NoSidePreview",
         "value": "1 << 8"
       },
       {
         "calc_value": 512,
+        "comment": " //              // ColorEdit: disable drag and drop target. ColorButton: disable drag and drop source.",
         "name": "ImGuiColorEditFlags_NoDragDrop",
         "value": "1 << 9"
       },
       {
         "calc_value": 65536,
+        "comment": " //              // ColorEdit, ColorPicker: show vertical alpha bar/gradient in picker.",
         "name": "ImGuiColorEditFlags_AlphaBar",
         "value": "1 << 16"
       },
       {
         "calc_value": 131072,
+        "comment": " //              // ColorEdit, ColorPicker, ColorButton: display preview as a transparent color over a checkerboard, instead of opaque.",
         "name": "ImGuiColorEditFlags_AlphaPreview",
         "value": "1 << 17"
       },
       {
         "calc_value": 262144,
+        "comment": " //              // ColorEdit, ColorPicker, ColorButton: display half opaque / half checkerboard, instead of opaque.",
         "name": "ImGuiColorEditFlags_AlphaPreviewHalf",
         "value": "1 << 18"
       },
       {
         "calc_value": 524288,
+        "comment": " //              // (WIP) ColorEdit: Currently only disable 0.0f..1.0f limits in RGBA edition (note: you probably want to use ImGuiColorEditFlags_Float flag as well).",
         "name": "ImGuiColorEditFlags_HDR",
         "value": "1 << 19"
       },
       {
         "calc_value": 1048576,
+        "comment": " // [Display]    // ColorEdit: override _display_ type among RGB/HSV/Hex. ColorPicker: select any combination using one or more of RGB/HSV/Hex.",
         "name": "ImGuiColorEditFlags_DisplayRGB",
         "value": "1 << 20"
       },
       {
         "calc_value": 2097152,
+        "comment": " // [Display]    // \"",
         "name": "ImGuiColorEditFlags_DisplayHSV",
         "value": "1 << 21"
       },
       {
         "calc_value": 4194304,
+        "comment": " // [Display]    // \"",
         "name": "ImGuiColorEditFlags_DisplayHex",
         "value": "1 << 22"
       },
       {
         "calc_value": 8388608,
+        "comment": " // [DataType]   // ColorEdit, ColorPicker, ColorButton: _display_ values formatted as 0..255.",
         "name": "ImGuiColorEditFlags_Uint8",
         "value": "1 << 23"
       },
       {
         "calc_value": 16777216,
+        "comment": " // [DataType]   // ColorEdit, ColorPicker, ColorButton: _display_ values formatted as 0.0f..1.0f floats instead of 0..255 integers. No round-trip of value via integers.",
         "name": "ImGuiColorEditFlags_Float",
         "value": "1 << 24"
       },
       {
         "calc_value": 33554432,
+        "comment": " // [Picker]     // ColorPicker: bar for Hue, rectangle for Sat/Value.",
         "name": "ImGuiColorEditFlags_PickerHueBar",
         "value": "1 << 25"
       },
       {
         "calc_value": 67108864,
+        "comment": " // [Picker]     // ColorPicker: wheel for Hue, triangle for Sat/Value.",
         "name": "ImGuiColorEditFlags_PickerHueWheel",
         "value": "1 << 26"
       },
       {
         "calc_value": 134217728,
+        "comment": " // [Input]      // ColorEdit, ColorPicker: input and output data in RGB format.",
         "name": "ImGuiColorEditFlags_InputRGB",
         "value": "1 << 27"
       },
       {
         "calc_value": 268435456,
+        "comment": " // [Input]      // ColorEdit, ColorPicker: input and output data in HSV format.",
         "name": "ImGuiColorEditFlags_InputHSV",
         "value": "1 << 28"
       },
@@ -500,36 +546,43 @@
       },
       {
         "calc_value": 1,
+        "comment": " // Align the popup toward the left by default",
         "name": "ImGuiComboFlags_PopupAlignLeft",
         "value": "1 << 0"
       },
       {
         "calc_value": 2,
+        "comment": " // Max ~4 items visible. Tip: If you want your combo popup to be a specific size you can use SetNextWindowSizeConstraints() prior to calling BeginCombo()",
         "name": "ImGuiComboFlags_HeightSmall",
         "value": "1 << 1"
       },
       {
         "calc_value": 4,
+        "comment": " // Max ~8 items visible (default)",
         "name": "ImGuiComboFlags_HeightRegular",
         "value": "1 << 2"
       },
       {
         "calc_value": 8,
+        "comment": " // Max ~20 items visible",
         "name": "ImGuiComboFlags_HeightLarge",
         "value": "1 << 3"
       },
       {
         "calc_value": 16,
+        "comment": " // As many fitting items as possible",
         "name": "ImGuiComboFlags_HeightLargest",
         "value": "1 << 4"
       },
       {
         "calc_value": 32,
+        "comment": " // Display on the preview box without the square arrow button",
         "name": "ImGuiComboFlags_NoArrowButton",
         "value": "1 << 5"
       },
       {
         "calc_value": 64,
+        "comment": " // Display only a square arrow button",
         "name": "ImGuiComboFlags_NoPreview",
         "value": "1 << 6"
       },
@@ -542,21 +595,25 @@
     "ImGuiCond_": [
       {
         "calc_value": 1,
+        "comment": " // Set the variable",
         "name": "ImGuiCond_Always",
         "value": "1 << 0"
       },
       {
         "calc_value": 2,
+        "comment": " // Set the variable once per runtime session (only the first call with succeed)",
         "name": "ImGuiCond_Once",
         "value": "1 << 1"
       },
       {
         "calc_value": 4,
+        "comment": " // Set the variable if the object/window has no persistently saved data (no entry in .ini file)",
         "name": "ImGuiCond_FirstUseEver",
         "value": "1 << 2"
       },
       {
         "calc_value": 8,
+        "comment": " // Set the variable if the object/window is appearing after being hidden/inactive (or the first time)",
         "name": "ImGuiCond_Appearing",
         "value": "1 << 3"
       }
@@ -569,41 +626,49 @@
       },
       {
         "calc_value": 1,
+        "comment": " // Master keyboard navigation enable flag. NewFrame() will automatically fill io.NavInputs[] based on io.KeysDown[].",
         "name": "ImGuiConfigFlags_NavEnableKeyboard",
         "value": "1 << 0"
       },
       {
         "calc_value": 2,
+        "comment": " // Master gamepad navigation enable flag. This is mostly to instruct your imgui back-end to fill io.NavInputs[]. Back-end also needs to set ImGuiBackendFlags_HasGamepad.",
         "name": "ImGuiConfigFlags_NavEnableGamepad",
         "value": "1 << 1"
       },
       {
         "calc_value": 4,
+        "comment": " // Instruct navigation to move the mouse cursor. May be useful on TV/console systems where moving a virtual mouse is awkward. Will update io.MousePos and set io.WantSetMousePos=true. If enabled you MUST honor io.WantSetMousePos requests in your binding, otherwise ImGui will react as if the mouse is jumping around back and forth.",
         "name": "ImGuiConfigFlags_NavEnableSetMousePos",
         "value": "1 << 2"
       },
       {
         "calc_value": 8,
+        "comment": " // Instruct navigation to not set the io.WantCaptureKeyboard flag when io.NavActive is set.",
         "name": "ImGuiConfigFlags_NavNoCaptureKeyboard",
         "value": "1 << 3"
       },
       {
         "calc_value": 16,
+        "comment": " // Instruct imgui to clear mouse position/buttons in NewFrame(). This allows ignoring the mouse information set by the back-end.",
         "name": "ImGuiConfigFlags_NoMouse",
         "value": "1 << 4"
       },
       {
         "calc_value": 32,
+        "comment": " // Instruct back-end to not alter mouse cursor shape and visibility. Use if the back-end cursor changes are interfering with yours and you don't want to use SetMouseCursor() to change mouse cursor. You may want to honor requests from imgui by reading GetMouseCursor() yourself instead.",
         "name": "ImGuiConfigFlags_NoMouseCursorChange",
         "value": "1 << 5"
       },
       {
         "calc_value": 1048576,
+        "comment": " // Application is SRGB-aware.",
         "name": "ImGuiConfigFlags_IsSRGB",
         "value": "1 << 20"
       },
       {
         "calc_value": 2097152,
+        "comment": " // Application is using a touch screen instead of a mouse.",
         "name": "ImGuiConfigFlags_IsTouchScreen",
         "value": "1 << 21"
       }
@@ -611,51 +676,61 @@
     "ImGuiDataType_": [
       {
         "calc_value": 0,
+        "comment": " // char",
         "name": "ImGuiDataType_S8",
         "value": 0
       },
       {
         "calc_value": 1,
+        "comment": " // unsigned char",
         "name": "ImGuiDataType_U8",
         "value": 1
       },
       {
         "calc_value": 2,
+        "comment": " // short",
         "name": "ImGuiDataType_S16",
         "value": 2
       },
       {
         "calc_value": 3,
+        "comment": " // unsigned short",
         "name": "ImGuiDataType_U16",
         "value": 3
       },
       {
         "calc_value": 4,
+        "comment": " // int",
         "name": "ImGuiDataType_S32",
         "value": 4
       },
       {
         "calc_value": 5,
+        "comment": " // unsigned int",
         "name": "ImGuiDataType_U32",
         "value": 5
       },
       {
         "calc_value": 6,
+        "comment": " // long long / __int64",
         "name": "ImGuiDataType_S64",
         "value": 6
       },
       {
         "calc_value": 7,
+        "comment": " // unsigned long long / unsigned __int64",
         "name": "ImGuiDataType_U64",
         "value": 7
       },
       {
         "calc_value": 8,
+        "comment": " // float",
         "name": "ImGuiDataType_Float",
         "value": 8
       },
       {
         "calc_value": 9,
+        "comment": " // double",
         "name": "ImGuiDataType_Double",
         "value": 9
       },
@@ -705,51 +780,61 @@
       },
       {
         "calc_value": 1,
+        "comment": " // By default, a successful call to BeginDragDropSource opens a tooltip so you can display a preview or description of the source contents. This flag disable this behavior.",
         "name": "ImGuiDragDropFlags_SourceNoPreviewTooltip",
         "value": "1 << 0"
       },
       {
         "calc_value": 2,
+        "comment": " // By default, when dragging we clear data so that IsItemHovered() will return false, to avoid subsequent user code submitting tooltips. This flag disable this behavior so you can still call IsItemHovered() on the source item.",
         "name": "ImGuiDragDropFlags_SourceNoDisableHover",
         "value": "1 << 1"
       },
       {
         "calc_value": 4,
+        "comment": " // Disable the behavior that allows to open tree nodes and collapsing header by holding over them while dragging a source item.",
         "name": "ImGuiDragDropFlags_SourceNoHoldToOpenOthers",
         "value": "1 << 2"
       },
       {
         "calc_value": 8,
+        "comment": " // Allow items such as Text(), Image() that have no unique identifier to be used as drag source, by manufacturing a temporary identifier based on their window-relative position. This is extremely unusual within the dear imgui ecosystem and so we made it explicit.",
         "name": "ImGuiDragDropFlags_SourceAllowNullID",
         "value": "1 << 3"
       },
       {
         "calc_value": 16,
+        "comment": " // External source (from outside of imgui), won't attempt to read current item/window info. Will always return true. Only one Extern source can be active simultaneously.",
         "name": "ImGuiDragDropFlags_SourceExtern",
         "value": "1 << 4"
       },
       {
         "calc_value": 32,
+        "comment": " // Automatically expire the payload if the source cease to be submitted (otherwise payloads are persisting while being dragged)",
         "name": "ImGuiDragDropFlags_SourceAutoExpirePayload",
         "value": "1 << 5"
       },
       {
         "calc_value": 1024,
+        "comment": " // AcceptDragDropPayload() will returns true even before the mouse button is released. You can then call IsDelivery() to test if the payload needs to be delivered.",
         "name": "ImGuiDragDropFlags_AcceptBeforeDelivery",
         "value": "1 << 10"
       },
       {
         "calc_value": 2048,
+        "comment": " // Do not draw the default highlight rectangle when hovering over target.",
         "name": "ImGuiDragDropFlags_AcceptNoDrawDefaultRect",
         "value": "1 << 11"
       },
       {
         "calc_value": 4096,
+        "comment": " // Request hiding the BeginDragDropSource tooltip from the BeginDragDropTarget site.",
         "name": "ImGuiDragDropFlags_AcceptNoPreviewTooltip",
         "value": "1 << 12"
       },
       {
         "calc_value": 3072,
+        "comment": " // For peeking ahead and inspecting the payload before delivery.",
         "name": "ImGuiDragDropFlags_AcceptPeekOnly",
         "value": "ImGuiDragDropFlags_AcceptBeforeDelivery | ImGuiDragDropFlags_AcceptNoDrawDefaultRect"
       }
@@ -762,16 +847,19 @@
       },
       {
         "calc_value": 1,
+        "comment": " // IsWindowFocused(): Return true if any children of the window is focused",
         "name": "ImGuiFocusedFlags_ChildWindows",
         "value": "1 << 0"
       },
       {
         "calc_value": 2,
+        "comment": " // IsWindowFocused(): Test from root window (top most parent of the current hierarchy)",
         "name": "ImGuiFocusedFlags_RootWindow",
         "value": "1 << 1"
       },
       {
         "calc_value": 4,
+        "comment": " // IsWindowFocused(): Return true if any window is focused. Important: If you are trying to tell how to dispatch your low-level inputs, do NOT use this. Use ImGui::GetIO().WantCaptureMouse instead.",
         "name": "ImGuiFocusedFlags_AnyWindow",
         "value": "1 << 2"
       },
@@ -784,41 +872,49 @@
     "ImGuiHoveredFlags_": [
       {
         "calc_value": 0,
+        "comment": " // Return true if directly over the item/window, not obstructed by another window, not obstructed by an active popup or modal blocking inputs under them.",
         "name": "ImGuiHoveredFlags_None",
         "value": "0"
       },
       {
         "calc_value": 1,
+        "comment": " // IsWindowHovered() only: Return true if any children of the window is hovered",
         "name": "ImGuiHoveredFlags_ChildWindows",
         "value": "1 << 0"
       },
       {
         "calc_value": 2,
+        "comment": " // IsWindowHovered() only: Test from root window (top most parent of the current hierarchy)",
         "name": "ImGuiHoveredFlags_RootWindow",
         "value": "1 << 1"
       },
       {
         "calc_value": 4,
+        "comment": " // IsWindowHovered() only: Return true if any window is hovered",
         "name": "ImGuiHoveredFlags_AnyWindow",
         "value": "1 << 2"
       },
       {
         "calc_value": 8,
+        "comment": " // Return true even if a popup window is normally blocking access to this item/window",
         "name": "ImGuiHoveredFlags_AllowWhenBlockedByPopup",
         "value": "1 << 3"
       },
       {
         "calc_value": 32,
+        "comment": " // Return true even if an active item is blocking access to this item/window. Useful for Drag and Drop patterns.",
         "name": "ImGuiHoveredFlags_AllowWhenBlockedByActiveItem",
         "value": "1 << 5"
       },
       {
         "calc_value": 64,
+        "comment": " // Return true even if the position is overlapped by another window",
         "name": "ImGuiHoveredFlags_AllowWhenOverlapped",
         "value": "1 << 6"
       },
       {
         "calc_value": 128,
+        "comment": " // Return true even if the item is disabled",
         "name": "ImGuiHoveredFlags_AllowWhenDisabled",
         "value": "1 << 7"
       },
@@ -841,101 +937,121 @@
       },
       {
         "calc_value": 1,
+        "comment": " // Allow 0123456789.+-*/",
         "name": "ImGuiInputTextFlags_CharsDecimal",
         "value": "1 << 0"
       },
       {
         "calc_value": 2,
+        "comment": " // Allow 0123456789ABCDEFabcdef",
         "name": "ImGuiInputTextFlags_CharsHexadecimal",
         "value": "1 << 1"
       },
       {
         "calc_value": 4,
+        "comment": " // Turn a..z into A..Z",
         "name": "ImGuiInputTextFlags_CharsUppercase",
         "value": "1 << 2"
       },
       {
         "calc_value": 8,
+        "comment": " // Filter out spaces, tabs",
         "name": "ImGuiInputTextFlags_CharsNoBlank",
         "value": "1 << 3"
       },
       {
         "calc_value": 16,
+        "comment": " // Select entire text when first taking mouse focus",
         "name": "ImGuiInputTextFlags_AutoSelectAll",
         "value": "1 << 4"
       },
       {
         "calc_value": 32,
+        "comment": " // Return 'true' when Enter is pressed (as opposed to every time the value was modified). Consider looking at the IsItemDeactivatedAfterEdit() function.",
         "name": "ImGuiInputTextFlags_EnterReturnsTrue",
         "value": "1 << 5"
       },
       {
         "calc_value": 64,
+        "comment": " // Callback on pressing TAB (for completion handling)",
         "name": "ImGuiInputTextFlags_CallbackCompletion",
         "value": "1 << 6"
       },
       {
         "calc_value": 128,
+        "comment": " // Callback on pressing Up/Down arrows (for history handling)",
         "name": "ImGuiInputTextFlags_CallbackHistory",
         "value": "1 << 7"
       },
       {
         "calc_value": 256,
+        "comment": " // Callback on each iteration. User code may query cursor position, modify text buffer.",
         "name": "ImGuiInputTextFlags_CallbackAlways",
         "value": "1 << 8"
       },
       {
         "calc_value": 512,
+        "comment": " // Callback on character inputs to replace or discard them. Modify 'EventChar' to replace or discard, or return 1 in callback to discard.",
         "name": "ImGuiInputTextFlags_CallbackCharFilter",
         "value": "1 << 9"
       },
       {
         "calc_value": 1024,
+        "comment": " // Pressing TAB input a '\\t' character into the text field",
         "name": "ImGuiInputTextFlags_AllowTabInput",
         "value": "1 << 10"
       },
       {
         "calc_value": 2048,
+        "comment": " // In multi-line mode, unfocus with Enter, add new line with Ctrl+Enter (default is opposite: unfocus with Ctrl+Enter, add line with Enter).",
         "name": "ImGuiInputTextFlags_CtrlEnterForNewLine",
         "value": "1 << 11"
       },
       {
         "calc_value": 4096,
+        "comment": " // Disable following the cursor horizontally",
         "name": "ImGuiInputTextFlags_NoHorizontalScroll",
         "value": "1 << 12"
       },
       {
         "calc_value": 8192,
+        "comment": " // Insert mode",
         "name": "ImGuiInputTextFlags_AlwaysInsertMode",
         "value": "1 << 13"
       },
       {
         "calc_value": 16384,
+        "comment": " // Read-only mode",
         "name": "ImGuiInputTextFlags_ReadOnly",
         "value": "1 << 14"
       },
       {
         "calc_value": 32768,
+        "comment": " // Password mode, display all characters as '*'",
         "name": "ImGuiInputTextFlags_Password",
         "value": "1 << 15"
       },
       {
         "calc_value": 65536,
+        "comment": " // Disable undo/redo. Note that input text owns the text data while active, if you want to provide your own undo/redo stack you need e.g. to call ClearActiveID().",
         "name": "ImGuiInputTextFlags_NoUndoRedo",
         "value": "1 << 16"
       },
       {
         "calc_value": 131072,
+        "comment": " // Allow 0123456789.+-*/eE (Scientific notation input)",
         "name": "ImGuiInputTextFlags_CharsScientific",
         "value": "1 << 17"
       },
       {
         "calc_value": 262144,
+        "comment": " // Callback on buffer capacity changes request (beyond 'buf_size' parameter value), allowing the string to grow. Notify when the string wants to be resized (for string types which hold a cache of their Size). You will be provided a new BufSize in the callback and NEED to honor it. (see misc/cpp/imgui_stdlib.h for an example of using this)",
         "name": "ImGuiInputTextFlags_CallbackResize",
         "value": "1 << 18"
       },
       {
         "calc_value": 1048576,
+        "comment": " // For internal use by InputTextMultiline()",
         "name": "ImGuiInputTextFlags_Multiline",
         "value": "1 << 20"
       }
@@ -1018,31 +1134,37 @@
       },
       {
         "calc_value": 15,
+        "comment": " // for text edit CTRL+A: select all",
         "name": "ImGuiKey_A",
         "value": 15
       },
       {
         "calc_value": 16,
+        "comment": " // for text edit CTRL+C: copy",
         "name": "ImGuiKey_C",
         "value": 16
       },
       {
         "calc_value": 17,
+        "comment": " // for text edit CTRL+V: paste",
         "name": "ImGuiKey_V",
         "value": 17
       },
       {
         "calc_value": 18,
+        "comment": " // for text edit CTRL+X: cut",
         "name": "ImGuiKey_X",
         "value": 18
       },
       {
         "calc_value": 19,
+        "comment": " // for text edit CTRL+Y: redo",
         "name": "ImGuiKey_Y",
         "value": 19
       },
       {
         "calc_value": 20,
+        "comment": " // for text edit CTRL+Z: undo",
         "name": "ImGuiKey_Z",
         "value": 20
       },
@@ -1065,36 +1187,43 @@
       },
       {
         "calc_value": 1,
+        "comment": " // When hovering over InputText, etc.",
         "name": "ImGuiMouseCursor_TextInput",
         "value": 1
       },
       {
         "calc_value": 2,
+        "comment": " // (Unused by imgui functions)",
         "name": "ImGuiMouseCursor_ResizeAll",
         "value": 2
       },
       {
         "calc_value": 3,
+        "comment": " // When hovering over an horizontal border",
         "name": "ImGuiMouseCursor_ResizeNS",
         "value": 3
       },
       {
         "calc_value": 4,
+        "comment": " // When hovering over a vertical border or a column",
         "name": "ImGuiMouseCursor_ResizeEW",
         "value": 4
       },
       {
         "calc_value": 5,
+        "comment": " // When hovering over the bottom-left corner of a window",
         "name": "ImGuiMouseCursor_ResizeNESW",
         "value": 5
       },
       {
         "calc_value": 6,
+        "comment": " // When hovering over the bottom-right corner of a window",
         "name": "ImGuiMouseCursor_ResizeNWSE",
         "value": 6
       },
       {
         "calc_value": 7,
+        "comment": " // (Unused by imgui functions. Use for e.g. hyperlinks)",
         "name": "ImGuiMouseCursor_Hand",
         "value": 7
       },
@@ -1107,111 +1236,133 @@
     "ImGuiNavInput_": [
       {
         "calc_value": 0,
+        "comment": " // activate / open / toggle / tweak value       // e.g. Cross  (PS4), A (Xbox), A (Switch), Space (Keyboard)",
         "name": "ImGuiNavInput_Activate",
         "value": 0
       },
       {
         "calc_value": 1,
+        "comment": " // cancel / close / exit                        // e.g. Circle (PS4), B (Xbox), B (Switch), Escape (Keyboard)",
         "name": "ImGuiNavInput_Cancel",
         "value": 1
       },
       {
         "calc_value": 2,
+        "comment": " // text input / on-screen keyboard              // e.g. Triang.(PS4), Y (Xbox), X (Switch), Return (Keyboard)",
         "name": "ImGuiNavInput_Input",
         "value": 2
       },
       {
         "calc_value": 3,
+        "comment": " // tap: toggle menu / hold: focus, move, resize // e.g. Square (PS4), X (Xbox), Y (Switch), Alt (Keyboard)",
         "name": "ImGuiNavInput_Menu",
         "value": 3
       },
       {
         "calc_value": 4,
+        "comment": " // move / tweak / resize window (w/ PadMenu)    // e.g. D-pad Left/Right/Up/Down (Gamepads), Arrow keys (Keyboard)",
         "name": "ImGuiNavInput_DpadLeft",
         "value": 4
       },
       {
         "calc_value": 5,
+        "comment": " //",
         "name": "ImGuiNavInput_DpadRight",
         "value": 5
       },
       {
         "calc_value": 6,
+        "comment": " //",
         "name": "ImGuiNavInput_DpadUp",
         "value": 6
       },
       {
         "calc_value": 7,
+        "comment": " //",
         "name": "ImGuiNavInput_DpadDown",
         "value": 7
       },
       {
         "calc_value": 8,
+        "comment": " // scroll / move window (w/ PadMenu)            // e.g. Left Analog Stick Left/Right/Up/Down",
         "name": "ImGuiNavInput_LStickLeft",
         "value": 8
       },
       {
         "calc_value": 9,
+        "comment": " //",
         "name": "ImGuiNavInput_LStickRight",
         "value": 9
       },
       {
         "calc_value": 10,
+        "comment": " //",
         "name": "ImGuiNavInput_LStickUp",
         "value": 10
       },
       {
         "calc_value": 11,
+        "comment": " //",
         "name": "ImGuiNavInput_LStickDown",
         "value": 11
       },
       {
         "calc_value": 12,
+        "comment": " // next window (w/ PadMenu)                     // e.g. L1 or L2 (PS4), LB or LT (Xbox), L or ZL (Switch)",
         "name": "ImGuiNavInput_FocusPrev",
         "value": 12
       },
       {
         "calc_value": 13,
+        "comment": " // prev window (w/ PadMenu)                     // e.g. R1 or R2 (PS4), RB or RT (Xbox), R or ZL (Switch)",
         "name": "ImGuiNavInput_FocusNext",
         "value": 13
       },
       {
         "calc_value": 14,
+        "comment": " // slower tweaks                                // e.g. L1 or L2 (PS4), LB or LT (Xbox), L or ZL (Switch)",
         "name": "ImGuiNavInput_TweakSlow",
         "value": 14
       },
       {
         "calc_value": 15,
+        "comment": " // faster tweaks                                // e.g. R1 or R2 (PS4), RB or RT (Xbox), R or ZL (Switch)",
         "name": "ImGuiNavInput_TweakFast",
         "value": 15
       },
       {
         "calc_value": 16,
+        "comment": " // toggle menu                                  // = io.KeyAlt",
         "name": "ImGuiNavInput_KeyMenu_",
         "value": 16
       },
       {
         "calc_value": 17,
+        "comment": " // tab                                          // = Tab key",
         "name": "ImGuiNavInput_KeyTab_",
         "value": 17
       },
       {
         "calc_value": 18,
+        "comment": " // move left                                    // = Arrow keys",
         "name": "ImGuiNavInput_KeyLeft_",
         "value": 18
       },
       {
         "calc_value": 19,
+        "comment": " // move right",
         "name": "ImGuiNavInput_KeyRight_",
         "value": 19
       },
       {
         "calc_value": 20,
+        "comment": " // move up",
         "name": "ImGuiNavInput_KeyUp_",
         "value": 20
       },
       {
         "calc_value": 21,
+        "comment": " // move down",
         "name": "ImGuiNavInput_KeyDown_",
         "value": 21
       },
@@ -1234,21 +1385,25 @@
       },
       {
         "calc_value": 1,
+        "comment": " // Clicking this don't close parent popup window",
         "name": "ImGuiSelectableFlags_DontClosePopups",
         "value": "1 << 0"
       },
       {
         "calc_value": 2,
+        "comment": " // Selectable frame can span all columns (text will still fit in current column)",
         "name": "ImGuiSelectableFlags_SpanAllColumns",
         "value": "1 << 1"
       },
       {
         "calc_value": 4,
+        "comment": " // Generate press events on double clicks too",
         "name": "ImGuiSelectableFlags_AllowDoubleClick",
         "value": "1 << 2"
       },
       {
         "calc_value": 8,
+        "comment": " // Cannot be selected, display greyed out text",
         "name": "ImGuiSelectableFlags_Disabled",
         "value": "1 << 3"
       }
@@ -1256,116 +1411,139 @@
     "ImGuiStyleVar_": [
       {
         "calc_value": 0,
+        "comment": " // float     Alpha",
         "name": "ImGuiStyleVar_Alpha",
         "value": 0
       },
       {
         "calc_value": 1,
+        "comment": " // ImVec2    WindowPadding",
         "name": "ImGuiStyleVar_WindowPadding",
         "value": 1
       },
       {
         "calc_value": 2,
+        "comment": " // float     WindowRounding",
         "name": "ImGuiStyleVar_WindowRounding",
         "value": 2
       },
       {
         "calc_value": 3,
+        "comment": " // float     WindowBorderSize",
         "name": "ImGuiStyleVar_WindowBorderSize",
         "value": 3
       },
       {
         "calc_value": 4,
+        "comment": " // ImVec2    WindowMinSize",
         "name": "ImGuiStyleVar_WindowMinSize",
         "value": 4
       },
       {
         "calc_value": 5,
+        "comment": " // ImVec2    WindowTitleAlign",
         "name": "ImGuiStyleVar_WindowTitleAlign",
         "value": 5
       },
       {
         "calc_value": 6,
+        "comment": " // float     ChildRounding",
         "name": "ImGuiStyleVar_ChildRounding",
         "value": 6
       },
       {
         "calc_value": 7,
+        "comment": " // float     ChildBorderSize",
         "name": "ImGuiStyleVar_ChildBorderSize",
         "value": 7
       },
       {
         "calc_value": 8,
+        "comment": " // float     PopupRounding",
         "name": "ImGuiStyleVar_PopupRounding",
         "value": 8
       },
       {
         "calc_value": 9,
+        "comment": " // float     PopupBorderSize",
         "name": "ImGuiStyleVar_PopupBorderSize",
         "value": 9
       },
       {
         "calc_value": 10,
+        "comment": " // ImVec2    FramePadding",
         "name": "ImGuiStyleVar_FramePadding",
         "value": 10
       },
       {
         "calc_value": 11,
+        "comment": " // float     FrameRounding",
         "name": "ImGuiStyleVar_FrameRounding",
         "value": 11
       },
       {
         "calc_value": 12,
+        "comment": " // float     FrameBorderSize",
         "name": "ImGuiStyleVar_FrameBorderSize",
         "value": 12
       },
       {
         "calc_value": 13,
+        "comment": " // ImVec2    ItemSpacing",
         "name": "ImGuiStyleVar_ItemSpacing",
         "value": 13
       },
       {
         "calc_value": 14,
+        "comment": " // ImVec2    ItemInnerSpacing",
         "name": "ImGuiStyleVar_ItemInnerSpacing",
         "value": 14
       },
       {
         "calc_value": 15,
+        "comment": " // float     IndentSpacing",
         "name": "ImGuiStyleVar_IndentSpacing",
         "value": 15
       },
       {
         "calc_value": 16,
+        "comment": " // float     ScrollbarSize",
         "name": "ImGuiStyleVar_ScrollbarSize",
         "value": 16
       },
       {
         "calc_value": 17,
+        "comment": " // float     ScrollbarRounding",
         "name": "ImGuiStyleVar_ScrollbarRounding",
         "value": 17
       },
       {
         "calc_value": 18,
+        "comment": " // float     GrabMinSize",
         "name": "ImGuiStyleVar_GrabMinSize",
         "value": 18
       },
       {
         "calc_value": 19,
+        "comment": " // float     GrabRounding",
         "name": "ImGuiStyleVar_GrabRounding",
         "value": 19
       },
       {
         "calc_value": 20,
+        "comment": " // float     TabRounding",
         "name": "ImGuiStyleVar_TabRounding",
         "value": 20
       },
       {
         "calc_value": 21,
+        "comment": " // ImVec2    ButtonTextAlign",
         "name": "ImGuiStyleVar_ButtonTextAlign",
         "value": 21
       },
       {
         "calc_value": 22,
+        "comment": " // ImVec2    SelectableTextAlign",
         "name": "ImGuiStyleVar_SelectableTextAlign",
         "value": 22
       },
@@ -1383,11 +1561,13 @@
       },
       {
         "calc_value": 1,
+        "comment": " // Allow manually dragging tabs to re-order them + New tabs are appended at the end of list",
         "name": "ImGuiTabBarFlags_Reorderable",
         "value": "1 << 0"
       },
       {
         "calc_value": 2,
+        "comment": " // Automatically select new tabs when they appear",
         "name": "ImGuiTabBarFlags_AutoSelectNewTabs",
         "value": "1 << 1"
       },
@@ -1398,6 +1578,7 @@
       },
       {
         "calc_value": 8,
+        "comment": " // Disable behavior of closing tabs (that are submitted with p_open != NULL) with middle mouse button. You can still repro this behavior on user's side with if (IsItemHovered() && IsMouseClicked(2)) *p_open = false.",
         "name": "ImGuiTabBarFlags_NoCloseWithMiddleMouseButton",
         "value": "1 << 3"
       },
@@ -1408,16 +1589,19 @@
       },
       {
         "calc_value": 32,
+        "comment": " // Disable tooltips when hovering a tab",
         "name": "ImGuiTabBarFlags_NoTooltip",
         "value": "1 << 5"
       },
       {
         "calc_value": 64,
+        "comment": " // Resize tabs when they don't fit",
         "name": "ImGuiTabBarFlags_FittingPolicyResizeDown",
         "value": "1 << 6"
       },
       {
         "calc_value": 128,
+        "comment": " // Add scroll buttons when tabs don't fit",
         "name": "ImGuiTabBarFlags_FittingPolicyScroll",
         "value": "1 << 7"
       },
@@ -1440,21 +1624,25 @@
       },
       {
         "calc_value": 1,
+        "comment": " // Append '*' to title without affecting the ID, as a convenience to avoid using the ### operator. Also: tab is selected on closure and closure is deferred by one frame to allow code to undo it without flicker.",
         "name": "ImGuiTabItemFlags_UnsavedDocument",
         "value": "1 << 0"
       },
       {
         "calc_value": 2,
+        "comment": " // Trigger flag to programmatically make the tab selected when calling BeginTabItem()",
         "name": "ImGuiTabItemFlags_SetSelected",
         "value": "1 << 1"
       },
       {
         "calc_value": 4,
+        "comment": " // Disable behavior of closing tabs (that are submitted with p_open != NULL) with middle mouse button. You can still repro this behavior on user's side with if (IsItemHovered() && IsMouseClicked(2)) *p_open = false.",
         "name": "ImGuiTabItemFlags_NoCloseWithMiddleMouseButton",
         "value": "1 << 2"
       },
       {
         "calc_value": 8,
+        "comment": " // Don't call PushID(tab->ID)/PopID() on BeginTabItem()/EndTabItem()",
         "name": "ImGuiTabItemFlags_NoPushId",
         "value": "1 << 3"
       }
@@ -1467,61 +1655,73 @@
       },
       {
         "calc_value": 1,
+        "comment": " // Draw as selected",
         "name": "ImGuiTreeNodeFlags_Selected",
         "value": "1 << 0"
       },
       {
         "calc_value": 2,
+        "comment": " // Full colored frame (e.g. for CollapsingHeader)",
         "name": "ImGuiTreeNodeFlags_Framed",
         "value": "1 << 1"
       },
       {
         "calc_value": 4,
+        "comment": " // Hit testing to allow subsequent widgets to overlap this one",
         "name": "ImGuiTreeNodeFlags_AllowItemOverlap",
         "value": "1 << 2"
       },
       {
         "calc_value": 8,
+        "comment": " // Don't do a TreePush() when open (e.g. for CollapsingHeader) = no extra indent nor pushing on ID stack",
         "name": "ImGuiTreeNodeFlags_NoTreePushOnOpen",
         "value": "1 << 3"
       },
       {
         "calc_value": 16,
+        "comment": " // Don't automatically and temporarily open node when Logging is active (by default logging will automatically open tree nodes)",
         "name": "ImGuiTreeNodeFlags_NoAutoOpenOnLog",
         "value": "1 << 4"
       },
       {
         "calc_value": 32,
+        "comment": " // Default node to be open",
         "name": "ImGuiTreeNodeFlags_DefaultOpen",
         "value": "1 << 5"
       },
       {
         "calc_value": 64,
+        "comment": " // Need double-click to open node",
         "name": "ImGuiTreeNodeFlags_OpenOnDoubleClick",
         "value": "1 << 6"
       },
       {
         "calc_value": 128,
+        "comment": " // Only open when clicking on the arrow part. If ImGuiTreeNodeFlags_OpenOnDoubleClick is also set, single-click arrow or double-click all box to open.",
         "name": "ImGuiTreeNodeFlags_OpenOnArrow",
         "value": "1 << 7"
       },
       {
         "calc_value": 256,
+        "comment": " // No collapsing, no arrow (use as a convenience for leaf nodes).",
         "name": "ImGuiTreeNodeFlags_Leaf",
         "value": "1 << 8"
       },
       {
         "calc_value": 512,
+        "comment": " // Display a bullet instead of arrow",
         "name": "ImGuiTreeNodeFlags_Bullet",
         "value": "1 << 9"
       },
       {
         "calc_value": 1024,
+        "comment": " // Use FramePadding (even for an unframed text node) to vertically align text baseline to regular widget height. Equivalent to calling AlignTextToFramePadding().",
         "name": "ImGuiTreeNodeFlags_FramePadding",
         "value": "1 << 10"
       },
       {
         "calc_value": 8192,
+        "comment": " // (WIP) Nav: left direction may move to this TreeNode() from any of its child (items submitted between TreeNode and TreePop)",
         "name": "ImGuiTreeNodeFlags_NavLeftJumpsBackHere",
         "value": "1 << 13"
       },
@@ -1539,101 +1739,121 @@
       },
       {
         "calc_value": 1,
+        "comment": " // Disable title-bar",
         "name": "ImGuiWindowFlags_NoTitleBar",
         "value": "1 << 0"
       },
       {
         "calc_value": 2,
+        "comment": " // Disable user resizing with the lower-right grip",
         "name": "ImGuiWindowFlags_NoResize",
         "value": "1 << 1"
       },
       {
         "calc_value": 4,
+        "comment": " // Disable user moving the window",
         "name": "ImGuiWindowFlags_NoMove",
         "value": "1 << 2"
       },
       {
         "calc_value": 8,
+        "comment": " // Disable scrollbars (window can still scroll with mouse or programmatically)",
         "name": "ImGuiWindowFlags_NoScrollbar",
         "value": "1 << 3"
       },
       {
         "calc_value": 16,
+        "comment": " // Disable user vertically scrolling with mouse wheel. On child window, mouse wheel will be forwarded to the parent unless NoScrollbar is also set.",
         "name": "ImGuiWindowFlags_NoScrollWithMouse",
         "value": "1 << 4"
       },
       {
         "calc_value": 32,
+        "comment": " // Disable user collapsing window by double-clicking on it",
         "name": "ImGuiWindowFlags_NoCollapse",
         "value": "1 << 5"
       },
       {
         "calc_value": 64,
+        "comment": " // Resize every window to its content every frame",
         "name": "ImGuiWindowFlags_AlwaysAutoResize",
         "value": "1 << 6"
       },
       {
         "calc_value": 128,
+        "comment": " // Disable drawing background color (WindowBg, etc.) and outside border. Similar as using SetNextWindowBgAlpha(0.0f).",
         "name": "ImGuiWindowFlags_NoBackground",
         "value": "1 << 7"
       },
       {
         "calc_value": 256,
+        "comment": " // Never load/save settings in .ini file",
         "name": "ImGuiWindowFlags_NoSavedSettings",
         "value": "1 << 8"
       },
       {
         "calc_value": 512,
+        "comment": " // Disable catching mouse, hovering test with pass through.",
         "name": "ImGuiWindowFlags_NoMouseInputs",
         "value": "1 << 9"
       },
       {
         "calc_value": 1024,
+        "comment": " // Has a menu-bar",
         "name": "ImGuiWindowFlags_MenuBar",
         "value": "1 << 10"
       },
       {
         "calc_value": 2048,
+        "comment": " // Allow horizontal scrollbar to appear (off by default). You may use SetNextWindowContentSize(ImVec2(width,0.0f)); prior to calling Begin() to specify width. Read code in imgui_demo in the \"Horizontal Scrolling\" section.",
         "name": "ImGuiWindowFlags_HorizontalScrollbar",
         "value": "1 << 11"
       },
       {
         "calc_value": 4096,
+        "comment": " // Disable taking focus when transitioning from hidden to visible state",
         "name": "ImGuiWindowFlags_NoFocusOnAppearing",
         "value": "1 << 12"
       },
       {
         "calc_value": 8192,
+        "comment": " // Disable bringing window to front when taking focus (e.g. clicking on it or programmatically giving it focus)",
         "name": "ImGuiWindowFlags_NoBringToFrontOnFocus",
         "value": "1 << 13"
       },
       {
         "calc_value": 16384,
+        "comment": " // Always show vertical scrollbar (even if ContentSize.y < Size.y)",
         "name": "ImGuiWindowFlags_AlwaysVerticalScrollbar",
         "value": "1 << 14"
       },
       {
         "calc_value": 32768,
+        "comment": " // Always show horizontal scrollbar (even if ContentSize.x < Size.x)",
         "name": "ImGuiWindowFlags_AlwaysHorizontalScrollbar",
         "value": "1<< 15"
       },
       {
         "calc_value": 65536,
+        "comment": " // Ensure child windows without border uses style.WindowPadding (ignored by default for non-bordered child windows, because more convenient)",
         "name": "ImGuiWindowFlags_AlwaysUseWindowPadding",
         "value": "1 << 16"
       },
       {
         "calc_value": 262144,
+        "comment": " // No gamepad/keyboard navigation within the window",
         "name": "ImGuiWindowFlags_NoNavInputs",
         "value": "1 << 18"
       },
       {
         "calc_value": 524288,
+        "comment": " // No focusing toward this window with gamepad/keyboard navigation (e.g. skipped by CTRL+TAB)",
         "name": "ImGuiWindowFlags_NoNavFocus",
         "value": "1 << 19"
       },
       {
         "calc_value": 1048576,
+        "comment": " // Append '*' to title without affecting the ID, as a convenience to avoid using the ### operator. When used in a tab/docking context, tab is selected on closure and closure is deferred by one frame to allow code to cancel the closure (with a confirmation popup, etc.) without flicker.",
         "name": "ImGuiWindowFlags_UnsavedDocument",
         "value": "1 << 20"
       },
@@ -1654,31 +1874,37 @@
       },
       {
         "calc_value": 8388608,
+        "comment": " // [BETA] Allow gamepad/keyboard navigation to cross over parent border to this child (only use on child that have no scrolling!)",
         "name": "ImGuiWindowFlags_NavFlattened",
         "value": "1 << 23"
       },
       {
         "calc_value": 16777216,
+        "comment": " // Don't use! For internal use by BeginChild()",
         "name": "ImGuiWindowFlags_ChildWindow",
         "value": "1 << 24"
       },
       {
         "calc_value": 33554432,
+        "comment": " // Don't use! For internal use by BeginTooltip()",
         "name": "ImGuiWindowFlags_Tooltip",
         "value": "1 << 25"
       },
       {
         "calc_value": 67108864,
+        "comment": " // Don't use! For internal use by BeginPopup()",
         "name": "ImGuiWindowFlags_Popup",
         "value": "1 << 26"
       },
       {
         "calc_value": 134217728,
+        "comment": " // Don't use! For internal use by BeginPopupModal()",
         "name": "ImGuiWindowFlags_Modal",
         "value": "1 << 27"
       },
       {
         "calc_value": 268435456,
+        "comment": " // Don't use! For internal use by BeginMenu()",
         "name": "ImGuiWindowFlags_ChildMenu",
         "value": "1 << 28"
       }
@@ -1687,51 +1913,62 @@
   "structs": {
     "CustomRect": [
       {
+        "comment": " // Input    // User ID. Use <0x10000 to map into a font glyph, >=0x10000 for other/internal/custom texture data.",
         "name": "ID",
         "type": "unsigned int"
       },
       {
+        "comment": " // Input    // Desired rectangle dimension",
         "name": "Width",
         "type": "unsigned short"
       },
       {
+        "comment": " // Input    // Desired rectangle dimension",
         "name": "Height",
         "type": "unsigned short"
       },
       {
+        "comment": " // Output   // Packed position in Atlas",
         "name": "X",
         "type": "unsigned short"
       },
       {
+        "comment": " // Output   // Packed position in Atlas",
         "name": "Y",
         "type": "unsigned short"
       },
       {
+        "comment": " // Input    // For custom font glyphs only (ID<0x10000): glyph xadvance",
         "name": "GlyphAdvanceX",
         "type": "float"
       },
       {
+        "comment": " // Input    // For custom font glyphs only (ID<0x10000): glyph display offset",
         "name": "GlyphOffset",
         "type": "ImVec2"
       },
       {
+        "comment": " // Input    // For custom font glyphs only (ID<0x10000): target font",
         "name": "Font",
         "type": "ImFont*"
       }
     ],
     "ImColor": [
       {
+        "comment": "",
         "name": "Value",
         "type": "ImVec4"
       }
     ],
     "ImDrawChannel": [
       {
+        "comment": "",
         "name": "CmdBuffer",
         "template_type": "ImDrawCmd",
         "type": "ImVector_ImDrawCmd"
       },
       {
+        "comment": "",
         "name": "IdxBuffer",
         "template_type": "ImDrawIdx",
         "type": "ImVector_ImDrawIdx"
@@ -1739,124 +1976,152 @@
     ],
     "ImDrawCmd": [
       {
+        "comment": " // Number of indices (multiple of 3) to be rendered as triangles. Vertices are stored in the callee ImDrawList's vtx_buffer[] array, indices in idx_buffer[].",
         "name": "ElemCount",
         "type": "unsigned int"
       },
       {
+        "comment": " // Clipping rectangle (x1, y1, x2, y2). Subtract ImDrawData->DisplayPos to get clipping rectangle in \"viewport\" coordinates",
         "name": "ClipRect",
         "type": "ImVec4"
       },
       {
+        "comment": " // User-provided texture ID. Set by user in ImfontAtlas::SetTexID() for fonts or passed to Image*() functions. Ignore if never using images or multiple fonts atlas.",
         "name": "TextureId",
         "type": "ImTextureID"
       },
       {
+        "comment": " // If != NULL, call the function instead of rendering the vertices. clip_rect and texture_id will be set normally.",
         "name": "UserCallback",
         "type": "ImDrawCallback"
       },
       {
+        "comment": " // The draw callback code can access this.",
         "name": "UserCallbackData",
         "type": "void*"
       }
     ],
     "ImDrawData": [
       {
+        "comment": " // Only valid after Render() is called and before the next NewFrame() is called.",
         "name": "Valid",
         "type": "bool"
       },
       {
+        "comment": " // Array of ImDrawList* to render. The ImDrawList are owned by ImGuiContext and only pointed to from here.",
         "name": "CmdLists",
         "type": "ImDrawList**"
       },
       {
+        "comment": " // Number of ImDrawList* to render",
         "name": "CmdListsCount",
         "type": "int"
       },
       {
+        "comment": " // For convenience, sum of all ImDrawList's IdxBuffer.Size",
         "name": "TotalIdxCount",
         "type": "int"
       },
       {
+        "comment": " // For convenience, sum of all ImDrawList's VtxBuffer.Size",
         "name": "TotalVtxCount",
         "type": "int"
       },
       {
+        "comment": " // Upper-left position of the viewport to render (== upper-left of the orthogonal projection matrix to use)",
         "name": "DisplayPos",
         "type": "ImVec2"
       },
       {
+        "comment": " // Size of the viewport to render (== io.DisplaySize for the main viewport) (DisplayPos + DisplaySize == lower-right of the orthogonal projection matrix to use)",
         "name": "DisplaySize",
         "type": "ImVec2"
       },
       {
+        "comment": "\n    // Functions",
         "name": "FramebufferScale",
         "type": "ImVec2"
       }
     ],
     "ImDrawList": [
       {
+        "comment": " // Draw commands. Typically 1 command = 1 GPU draw call, unless the command is a callback.",
         "name": "CmdBuffer",
         "template_type": "ImDrawCmd",
         "type": "ImVector_ImDrawCmd"
       },
       {
+        "comment": " // Index buffer. Each command consume ImDrawCmd::ElemCount of those",
         "name": "IdxBuffer",
         "template_type": "ImDrawIdx",
         "type": "ImVector_ImDrawIdx"
       },
       {
+        "comment": " // Vertex buffer.",
         "name": "VtxBuffer",
         "template_type": "ImDrawVert",
         "type": "ImVector_ImDrawVert"
       },
       {
+        "comment": "\n    // [Internal, used while building lists]",
         "name": "Flags",
         "type": "ImDrawListFlags"
       },
       {
+        "comment": " // Pointer to shared draw data (you can use ImGui::GetDrawListSharedData() to get the one from current ImGui context)",
         "name": "_Data",
         "type": "const ImDrawListSharedData*"
       },
       {
+        "comment": " // Pointer to owner window's name for debugging",
         "name": "_OwnerName",
         "type": "const char*"
       },
       {
+        "comment": " // [Internal] == VtxBuffer.Size",
         "name": "_VtxCurrentIdx",
         "type": "unsigned int"
       },
       {
+        "comment": " // [Internal] point within VtxBuffer.Data after each add command (to avoid using the ImVector<> operators too much)",
         "name": "_VtxWritePtr",
         "type": "ImDrawVert*"
       },
       {
+        "comment": " // [Internal] point within IdxBuffer.Data after each add command (to avoid using the ImVector<> operators too much)",
         "name": "_IdxWritePtr",
         "type": "ImDrawIdx*"
       },
       {
+        "comment": " // [Internal]",
         "name": "_ClipRectStack",
         "template_type": "ImVec4",
         "type": "ImVector_ImVec4"
       },
       {
+        "comment": " // [Internal]",
         "name": "_TextureIdStack",
         "template_type": "ImTextureID",
         "type": "ImVector_ImTextureID"
       },
       {
+        "comment": " // [Internal] current path building",
         "name": "_Path",
         "template_type": "ImVec2",
         "type": "ImVector_ImVec2"
       },
       {
+        "comment": " // [Internal] current channel number (0)",
         "name": "_ChannelsCurrent",
         "type": "int"
       },
       {
+        "comment": " // [Internal] number of active channels (1+)",
         "name": "_ChannelsCount",
         "type": "int"
       },
       {
+        "comment": "\n    // If you want to create ImDrawList instances, pass them ImGui::GetDrawListSharedData() or create and use your own ImDrawListSharedData (so you can use ImDrawList without ImGui)",
         "name": "_Channels",
         "template_type": "ImDrawChannel",
         "type": "ImVector_ImDrawChannel"
@@ -1864,148 +2129,182 @@
     ],
     "ImDrawVert": [
       {
+        "comment": "",
         "name": "pos",
         "type": "ImVec2"
       },
       {
+        "comment": "",
         "name": "uv",
         "type": "ImVec2"
       },
       {
+        "comment": "",
         "name": "col",
         "type": "ImU32"
       }
     ],
     "ImFont": [
       {
+        "comment": " // 12-16 // out //            // Sparse. Glyphs->AdvanceX in a directly indexable way (cache-friendly for CalcTextSize functions which only this this info, and are often bottleneck in large UI).",
         "name": "IndexAdvanceX",
         "template_type": "float",
         "type": "ImVector_float"
       },
       {
+        "comment": " // 4     // out // = FallbackGlyph->AdvanceX",
         "name": "FallbackAdvanceX",
         "type": "float"
       },
       {
+        "comment": "\n    // Members: Hot ~36/48 bytes (for CalcTextSize + render loop)",
         "name": "FontSize",
         "type": "float"
       },
       {
+        "comment": " // 12-16 // out //            // Sparse. Index glyphs by Unicode code-point.",
         "name": "IndexLookup",
         "template_type": "ImWchar",
         "type": "ImVector_ImWchar"
       },
       {
+        "comment": " // 12-16 // out //            // All glyphs.",
         "name": "Glyphs",
         "template_type": "ImFontGlyph",
         "type": "ImVector_ImFontGlyph"
       },
       {
+        "comment": " // 4-8   // out // = FindGlyph(FontFallbackChar)",
         "name": "FallbackGlyph",
         "type": "const ImFontGlyph*"
       },
       {
+        "comment": "\n    // Members: Cold ~32/40 bytes",
         "name": "DisplayOffset",
         "type": "ImVec2"
       },
       {
+        "comment": " // 4-8   // out //            // What we has been loaded into",
         "name": "ContainerAtlas",
         "type": "ImFontAtlas*"
       },
       {
+        "comment": " // 4-8   // in  //            // Pointer within ContainerAtlas->ConfigData",
         "name": "ConfigData",
         "type": "const ImFontConfig*"
       },
       {
+        "comment": " // 2     // in  // ~ 1        // Number of ImFontConfig involved in creating this font. Bigger than 1 when merging multiple font sources into one ImFont.",
         "name": "ConfigDataCount",
         "type": "short"
       },
       {
+        "comment": " // 2     // in  // = '?'      // Replacement glyph if one isn't found. Only set via SetFallbackChar()",
         "name": "FallbackChar",
         "type": "ImWchar"
       },
       {
+        "comment": " // 4     // in  // = 1.f      // Base font scale, multiplied by the per-window font scale which you can adjust with SetWindowFontScale()",
         "name": "Scale",
         "type": "float"
       },
       {
+        "comment": " // 4+4   // out //            // Ascent: distance from top to bottom of e.g. 'A' [0..FontSize]",
         "name": "Ascent",
         "type": "float"
       },
       {
+        "comment": " // 4+4   // out //            // Ascent: distance from top to bottom of e.g. 'A' [0..FontSize]",
         "name": "Descent",
         "type": "float"
       },
       {
+        "comment": "// 4     // out //            // Total surface in pixels to get an idea of the font rasterization/texture cost (not exact, we approximate the cost of padding between glyphs)",
         "name": "MetricsTotalSurface",
         "type": "int"
       },
       {
+        "comment": "\n    // Methods",
         "name": "DirtyLookupTables",
         "type": "bool"
       }
     ],
     "ImFontAtlas": [
       {
+        "comment": " // Marked as Locked by ImGui::NewFrame() so attempt to modify the atlas will assert.",
         "name": "Locked",
         "type": "bool"
       },
       {
+        "comment": " // Build flags (see ImFontAtlasFlags_)",
         "name": "Flags",
         "type": "ImFontAtlasFlags"
       },
       {
+        "comment": " // User data to refer to the texture once it has been uploaded to user's graphic systems. It is passed back to you during rendering via the ImDrawCmd structure.",
         "name": "TexID",
         "type": "ImTextureID"
       },
       {
+        "comment": " // Texture width desired by user before Build(). Must be a power-of-two. If have many glyphs your graphics API have texture size restrictions you may want to increase texture width to decrease height.",
         "name": "TexDesiredWidth",
         "type": "int"
       },
       {
+        "comment": "\n    // NB: Access texture data via GetTexData*() calls! Which will setup a default font for you.",
         "name": "TexGlyphPadding",
         "type": "int"
       },
       {
+        "comment": " // 1 component per pixel, each component is unsigned 8-bit. Total size = TexWidth * TexHeight",
         "name": "TexPixelsAlpha8",
         "type": "unsigned char*"
       },
       {
+        "comment": " // 4 component per pixel, each component is unsigned 8-bit. Total size = TexWidth * TexHeight * 4",
         "name": "TexPixelsRGBA32",
         "type": "unsigned int*"
       },
       {
+        "comment": " // Texture width calculated during Build().",
         "name": "TexWidth",
         "type": "int"
       },
       {
+        "comment": " // Texture height calculated during Build().",
         "name": "TexHeight",
         "type": "int"
       },
       {
+        "comment": " // = (1.0f/TexWidth, 1.0f/TexHeight)",
         "name": "TexUvScale",
         "type": "ImVec2"
       },
       {
+        "comment": " // Texture coordinates to a white pixel",
         "name": "TexUvWhitePixel",
         "type": "ImVec2"
       },
       {
+        "comment": " // Hold all the fonts returned by AddFont*. Fonts[0] is the default font upon calling ImGui::NewFrame(), use ImGui::PushFont()/PopFont() to change the current font.",
         "name": "Fonts",
         "template_type": "ImFont*",
         "type": "ImVector_ImFontPtr"
       },
       {
+        "comment": " // Rectangles for packing custom texture data into the atlas.",
         "name": "CustomRects",
         "template_type": "CustomRect",
         "type": "ImVector_CustomRect"
       },
       {
+        "comment": " // Internal data",
         "name": "ConfigData",
         "template_type": "ImFontConfig",
         "type": "ImVector_ImFontConfig"
       },
       {
+        "comment": " // Identifiers of custom texture rectangle used by ImFontAtlas/ImDrawList",
         "name": "CustomRectIds[1]",
         "size": 1,
         "type": "int"
@@ -2013,123 +2312,152 @@
     ],
     "ImFontConfig": [
       {
+        "comment": " //          // TTF/OTF data",
         "name": "FontData",
         "type": "void*"
       },
       {
+        "comment": " //          // TTF/OTF data size",
         "name": "FontDataSize",
         "type": "int"
       },
       {
+        "comment": " // true     // TTF/OTF data ownership taken by the container ImFontAtlas (will delete memory itself).",
         "name": "FontDataOwnedByAtlas",
         "type": "bool"
       },
       {
+        "comment": " // 0        // Index of font within TTF/OTF file",
         "name": "FontNo",
         "type": "int"
       },
       {
+        "comment": " //          // Size in pixels for rasterizer (more or less maps to the resulting font height).",
         "name": "SizePixels",
         "type": "float"
       },
       {
+        "comment": " // 3        // Rasterize at higher quality for sub-pixel positioning. Read https://github.com/nothings/stb/blob/master/tests/oversample/README.md for details.",
         "name": "OversampleH",
         "type": "int"
       },
       {
+        "comment": " // 1        // Rasterize at higher quality for sub-pixel positioning. We don't use sub-pixel positions on the Y axis.",
         "name": "OversampleV",
         "type": "int"
       },
       {
+        "comment": " // false    // Align every glyph to pixel boundary. Useful e.g. if you are merging a non-pixel aligned font with the default font. If enabled, you can set OversampleH/V to 1.",
         "name": "PixelSnapH",
         "type": "bool"
       },
       {
+        "comment": " // 0, 0     // Extra spacing (in pixels) between glyphs. Only X axis is supported for now.",
         "name": "GlyphExtraSpacing",
         "type": "ImVec2"
       },
       {
+        "comment": " // 0, 0     // Offset all glyphs from this font input.",
         "name": "GlyphOffset",
         "type": "ImVec2"
       },
       {
+        "comment": " // NULL     // Pointer to a user-provided list of Unicode range (2 value per range, values are inclusive, zero-terminated list). THE ARRAY DATA NEEDS TO PERSIST AS LONG AS THE FONT IS ALIVE.",
         "name": "GlyphRanges",
         "type": "const ImWchar*"
       },
       {
+        "comment": " // 0        // Minimum AdvanceX for glyphs, set Min to align font icons, set both Min/Max to enforce mono-space font",
         "name": "GlyphMinAdvanceX",
         "type": "float"
       },
       {
+        "comment": " // FLT_MAX  // Maximum AdvanceX for glyphs",
         "name": "GlyphMaxAdvanceX",
         "type": "float"
       },
       {
+        "comment": " // false    // Merge into previous ImFont, so you can combine multiple inputs font into one ImFont (e.g. ASCII font + icons + Japanese glyphs). You may want to use GlyphOffset.y when merge font of different heights.",
         "name": "MergeMode",
         "type": "bool"
       },
       {
+        "comment": " // 0x00     // Settings for custom font rasterizer (e.g. ImGuiFreeType). Leave as zero if you aren't using one.",
         "name": "RasterizerFlags",
         "type": "unsigned int"
       },
       {
+        "comment": "\n    // [Internal]",
         "name": "RasterizerMultiply",
         "type": "float"
       },
       {
+        "comment": " // Name (strictly to ease debugging)",
         "name": "Name[40]",
         "size": 40,
         "type": "char"
       },
       {
+        "comment": "",
         "name": "DstFont",
         "type": "ImFont*"
       }
     ],
     "ImFontGlyph": [
       {
+        "comment": " // 0x0000..0xFFFF",
         "name": "Codepoint",
         "type": "ImWchar"
       },
       {
+        "comment": " // Distance to next character (= data from font + ImFontConfig::GlyphExtraSpacing.x baked in)",
         "name": "AdvanceX",
         "type": "float"
       },
       {
+        "comment": " // Glyph corners",
         "name": "X0",
         "type": "float"
       },
       {
+        "comment": " // Glyph corners",
         "name": "Y0",
         "type": "float"
       },
       {
+        "comment": " // Glyph corners",
         "name": "X1",
         "type": "float"
       },
       {
+        "comment": " // Glyph corners",
         "name": "Y1",
         "type": "float"
       },
       {
+        "comment": " // Texture coordinates",
         "name": "U0",
         "type": "float"
       },
       {
+        "comment": " // Texture coordinates",
         "name": "V0",
         "type": "float"
       },
       {
+        "comment": " // Texture coordinates",
         "name": "U1",
         "type": "float"
       },
       {
+        "comment": " // Texture coordinates",
         "name": "V1",
         "type": "float"
       }
     ],
     "ImFontGlyphRangesBuilder": [
       {
+        "comment": " // Store 1-bit per Unicode code point (0=unused, 1=used)",
         "name": "UsedChars",
         "template_type": "int",
         "type": "ImVector_int"
@@ -2137,325 +2465,401 @@
     ],
     "ImGuiIO": [
       {
+        "comment": " // = 0              // See ImGuiConfigFlags_ enum. Set by user/application. Gamepad/keyboard navigation options, etc.",
         "name": "ConfigFlags",
         "type": "ImGuiConfigFlags"
       },
       {
+        "comment": " // = 0              // See ImGuiBackendFlags_ enum. Set by back-end (imgui_impl_xxx files or custom back-end) to communicate features supported by the back-end.",
         "name": "BackendFlags",
         "type": "ImGuiBackendFlags"
       },
       {
+        "comment": " // <unset>          // Main display size, in pixels.",
         "name": "DisplaySize",
         "type": "ImVec2"
       },
       {
+        "comment": " // = 1.0f/60.0f     // Time elapsed since last frame, in seconds.",
         "name": "DeltaTime",
         "type": "float"
       },
       {
+        "comment": " // = 5.0f           // Minimum time between saving positions/sizes to .ini file, in seconds.",
         "name": "IniSavingRate",
         "type": "float"
       },
       {
+        "comment": " // = \"imgui.ini\"    // Path to .ini file. Set NULL to disable automatic .ini loading/saving, if e.g. you want to manually load/save from memory.",
         "name": "IniFilename",
         "type": "const char*"
       },
       {
+        "comment": " // = \"imgui_log.txt\"// Path to .log file (default parameter to ImGui::LogToFile when no file is specified).",
         "name": "LogFilename",
         "type": "const char*"
       },
       {
+        "comment": " // = 0.30f          // Time for a double-click, in seconds.",
         "name": "MouseDoubleClickTime",
         "type": "float"
       },
       {
+        "comment": " // = 6.0f           // Distance threshold to stay in to validate a double-click, in pixels.",
         "name": "MouseDoubleClickMaxDist",
         "type": "float"
       },
       {
+        "comment": " // = 6.0f           // Distance threshold before considering we are dragging.",
         "name": "MouseDragThreshold",
         "type": "float"
       },
       {
+        "comment": " // <unset>          // Map of indices into the KeysDown[512] entries array which represent your \"native\" keyboard state.",
         "name": "KeyMap[ImGuiKey_COUNT]",
         "size": 21,
         "type": "int"
       },
       {
+        "comment": " // = 0.250f         // When holding a key/button, time before it starts repeating, in seconds (for buttons in Repeat mode, etc.).",
         "name": "KeyRepeatDelay",
         "type": "float"
       },
       {
+        "comment": " // = 0.050f         // When holding a key/button, rate at which it repeats, in seconds.",
         "name": "KeyRepeatRate",
         "type": "float"
       },
       {
+        "comment": " // = NULL           // Store your own data for retrieval by callbacks.",
         "name": "UserData",
         "type": "void*"
       },
       {
+        "comment": " // <auto>           // Load, rasterize and pack one or more fonts into a single texture.",
         "name": "Fonts",
         "type": "ImFontAtlas*"
       },
       {
+        "comment": " // = 1.0f           // Global scale all fonts",
         "name": "FontGlobalScale",
         "type": "float"
       },
       {
+        "comment": " // = false          // Allow user scaling text of individual window with CTRL+Wheel.",
         "name": "FontAllowUserScaling",
         "type": "bool"
       },
       {
+        "comment": " // = NULL           // Font to use on NewFrame(). Use NULL to uses Fonts->Fonts[0].",
         "name": "FontDefault",
         "type": "ImFont*"
       },
       {
+        "comment": "\n    // Miscellaneous options",
         "name": "DisplayFramebufferScale",
         "type": "ImVec2"
       },
       {
+        "comment": " // = false          // Request ImGui to draw a mouse cursor for you (if you are on a platform without a mouse cursor). Cannot be easily renamed to 'io.ConfigXXX' because this is frequently used by back-end implementations.",
         "name": "MouseDrawCursor",
         "type": "bool"
       },
       {
+        "comment": " // = defined(__APPLE__) // OS X style: Text editing cursor movement using Alt instead of Ctrl, Shortcuts using Cmd/Super instead of Ctrl, Line/Text Start and End using Cmd+Arrows instead of Home/End, Double click selects by word instead of selecting whole text, Multi-selection in lists uses Cmd/Super instead of Ctrl (was called io.OptMacOSXBehaviors prior to 1.63)",
         "name": "ConfigMacOSXBehaviors",
         "type": "bool"
       },
       {
+        "comment": " // = true           // Set to false to disable blinking cursor, for users who consider it distracting. (was called: io.OptCursorBlink prior to 1.63)",
         "name": "ConfigInputTextCursorBlink",
         "type": "bool"
       },
       {
+        "comment": " // = true           // Enable resizing of windows from their edges and from the lower-left corner. This requires (io.BackendFlags & ImGuiBackendFlags_HasMouseCursors) because it needs mouse cursor feedback. (This used to be a per-window ImGuiWindowFlags_ResizeFromAnySide flag)",
         "name": "ConfigWindowsResizeFromEdges",
         "type": "bool"
       },
       {
+        "comment": "\n    // Optional: Platform/Renderer back-end name (informational only! will be displayed in About Window) + User data for back-end/wrappers to store their own stuff.",
         "name": "ConfigWindowsMoveFromTitleBarOnly",
         "type": "bool"
       },
       {
+        "comment": " // = NULL",
         "name": "BackendPlatformName",
         "type": "const char*"
       },
       {
+        "comment": " // = NULL",
         "name": "BackendRendererName",
         "type": "const char*"
       },
       {
+        "comment": " // = NULL",
         "name": "BackendPlatformUserData",
         "type": "void*"
       },
       {
+        "comment": " // = NULL",
         "name": "BackendRendererUserData",
         "type": "void*"
       },
       {
+        "comment": "\n    // (default to use native Win32 clipboard on Windows, otherwise uses a private clipboard. Override to access OS clipboard on other architectures)",
         "name": "BackendLanguageUserData",
         "type": "void*"
       },
       {
+        "comment": "",
         "name": "GetClipboardTextFn",
         "type": "const char*(*)(void* user_data)"
       },
       {
+        "comment": "",
         "name": "SetClipboardTextFn",
         "type": "void(*)(void* user_data,const char* text)"
       },
       {
+        "comment": "\n    // (default to use native imm32 api on Windows)",
         "name": "ClipboardUserData",
         "type": "void*"
       },
       {
+        "comment": "",
         "name": "ImeSetInputScreenPosFn",
         "type": "void(*)(int x,int y)"
       },
       {
+        "comment": "\n    // This is only here to keep ImGuiIO the same size/layout, so that IMGUI_DISABLE_OBSOLETE_FUNCTIONS can exceptionally be used outside of imconfig.h.",
         "name": "ImeWindowHandle",
         "type": "void*"
       },
       {
+        "comment": "\n    //------------------------------------------------------------------",
         "name": "RenderDrawListsFnUnused",
         "type": "void*"
       },
       {
+        "comment": " // Mouse position, in pixels. Set to ImVec2(-FLT_MAX,-FLT_MAX) if mouse is unavailable (on another screen, etc.)",
         "name": "MousePos",
         "type": "ImVec2"
       },
       {
+        "comment": " // Mouse buttons: 0=left, 1=right, 2=middle + extras. ImGui itself mostly only uses left button (BeginPopupContext** are using right button). Others buttons allows us to track if the mouse is being used by your application + available to user as a convenience via IsMouse** API.",
         "name": "MouseDown[5]",
         "size": 5,
         "type": "bool"
       },
       {
+        "comment": " // Mouse wheel Vertical: 1 unit scrolls about 5 lines text.",
         "name": "MouseWheel",
         "type": "float"
       },
       {
+        "comment": " // Mouse wheel Horizontal. Most users don't have a mouse with an horizontal wheel, may not be filled by all back-ends.",
         "name": "MouseWheelH",
         "type": "float"
       },
       {
+        "comment": " // Keyboard modifier pressed: Control",
         "name": "KeyCtrl",
         "type": "bool"
       },
       {
+        "comment": " // Keyboard modifier pressed: Shift",
         "name": "KeyShift",
         "type": "bool"
       },
       {
+        "comment": " // Keyboard modifier pressed: Alt",
         "name": "KeyAlt",
         "type": "bool"
       },
       {
+        "comment": " // Keyboard modifier pressed: Cmd/Super/Windows",
         "name": "KeySuper",
         "type": "bool"
       },
       {
+        "comment": " // Keyboard keys that are pressed (ideally left in the \"native\" order your engine has access to keyboard keys, so you can use your own defines/enums for keys).",
         "name": "KeysDown[512]",
         "size": 512,
         "type": "bool"
       },
       {
+        "comment": "\n    // Functions",
         "name": "NavInputs[ImGuiNavInput_COUNT]",
         "size": 22,
         "type": "float"
       },
       {
+        "comment": " // When io.WantCaptureMouse is true, imgui will use the mouse inputs, do not dispatch them to your main game/application (in both cases, always pass on mouse inputs to imgui). (e.g. unclicked mouse is hovering over an imgui window, widget is active, mouse was clicked over an imgui window, etc.).",
         "name": "WantCaptureMouse",
         "type": "bool"
       },
       {
+        "comment": " // When io.WantCaptureKeyboard is true, imgui will use the keyboard inputs, do not dispatch them to your main game/application (in both cases, always pass keyboard inputs to imgui). (e.g. InputText active, or an imgui window is focused and navigation is enabled, etc.).",
         "name": "WantCaptureKeyboard",
         "type": "bool"
       },
       {
+        "comment": " // Mobile/console: when io.WantTextInput is true, you may display an on-screen keyboard. This is set by ImGui when it wants textual keyboard input to happen (e.g. when a InputText widget is active).",
         "name": "WantTextInput",
         "type": "bool"
       },
       {
+        "comment": " // MousePos has been altered, back-end should reposition mouse on next frame. Set only when ImGuiConfigFlags_NavEnableSetMousePos flag is enabled.",
         "name": "WantSetMousePos",
         "type": "bool"
       },
       {
+        "comment": " // When manual .ini load/save is active (io.IniFilename == NULL), this will be set to notify your application that you can call SaveIniSettingsToMemory() and save yourself. IMPORTANT: You need to clear io.WantSaveIniSettings yourself.",
         "name": "WantSaveIniSettings",
         "type": "bool"
       },
       {
+        "comment": " // Directional navigation is currently allowed (will handle ImGuiKey_NavXXX events) = a window is focused and it doesn't use the ImGuiWindowFlags_NoNavInputs flag.",
         "name": "NavActive",
         "type": "bool"
       },
       {
+        "comment": " // Directional navigation is visible and allowed (will handle ImGuiKey_NavXXX events).",
         "name": "NavVisible",
         "type": "bool"
       },
       {
+        "comment": " // Application framerate estimation, in frame per second. Solely for convenience. Rolling average estimation based on IO.DeltaTime over 120 frames",
         "name": "Framerate",
         "type": "float"
       },
       {
+        "comment": " // Vertices output during last call to Render()",
         "name": "MetricsRenderVertices",
         "type": "int"
       },
       {
+        "comment": " // Indices output during last call to Render() = number of triangles * 3",
         "name": "MetricsRenderIndices",
         "type": "int"
       },
       {
+        "comment": " // Number of visible windows",
         "name": "MetricsRenderWindows",
         "type": "int"
       },
       {
+        "comment": " // Number of active windows",
         "name": "MetricsActiveWindows",
         "type": "int"
       },
       {
+        "comment": " // Number of active allocations, updated by MemAlloc/MemFree based on current context. May be off if you have multiple imgui contexts.",
         "name": "MetricsActiveAllocations",
         "type": "int"
       },
       {
+        "comment": "\n    //------------------------------------------------------------------",
         "name": "MouseDelta",
         "type": "ImVec2"
       },
       {
+        "comment": " // Previous mouse position (note that MouseDelta is not necessary == MousePos-MousePosPrev, in case either position is invalid)",
         "name": "MousePosPrev",
         "type": "ImVec2"
       },
       {
+        "comment": " // Position at time of clicking",
         "name": "MouseClickedPos[5]",
         "size": 5,
         "type": "ImVec2"
       },
       {
+        "comment": " // Time of last click (used to figure out double-click)",
         "name": "MouseClickedTime[5]",
         "size": 5,
         "type": "double"
       },
       {
+        "comment": " // Mouse button went from !Down to Down",
         "name": "MouseClicked[5]",
         "size": 5,
         "type": "bool"
       },
       {
+        "comment": " // Has mouse button been double-clicked?",
         "name": "MouseDoubleClicked[5]",
         "size": 5,
         "type": "bool"
       },
       {
+        "comment": " // Mouse button went from Down to !Down",
         "name": "MouseReleased[5]",
         "size": 5,
         "type": "bool"
       },
       {
+        "comment": " // Track if button was clicked inside an imgui window. We don't request mouse capture from the application if click started outside ImGui bounds.",
         "name": "MouseDownOwned[5]",
         "size": 5,
         "type": "bool"
       },
       {
+        "comment": " // Track if button down was a double-click",
         "name": "MouseDownWasDoubleClick[5]",
         "size": 5,
         "type": "bool"
       },
       {
+        "comment": " // Duration the mouse button has been down (0.0f == just clicked)",
         "name": "MouseDownDuration[5]",
         "size": 5,
         "type": "float"
       },
       {
+        "comment": " // Previous time the mouse button has been down",
         "name": "MouseDownDurationPrev[5]",
         "size": 5,
         "type": "float"
       },
       {
+        "comment": " // Maximum distance, absolute, on each axis, of how much mouse has traveled from the clicking point",
         "name": "MouseDragMaxDistanceAbs[5]",
         "size": 5,
         "type": "ImVec2"
       },
       {
+        "comment": " // Squared maximum distance of how much mouse has traveled from the clicking point",
         "name": "MouseDragMaxDistanceSqr[5]",
         "size": 5,
         "type": "float"
       },
       {
+        "comment": " // Duration the keyboard key has been down (0.0f == just pressed)",
         "name": "KeysDownDuration[512]",
         "size": 512,
         "type": "float"
       },
       {
+        "comment": " // Previous duration the key has been down",
         "name": "KeysDownDurationPrev[512]",
         "size": 512,
         "type": "float"
       },
       {
+        "comment": "",
         "name": "NavInputsDownDuration[ImGuiNavInput_COUNT]",
         "size": 22,
         "type": "float"
       },
       {
+        "comment": "",
         "name": "NavInputsDownDurationPrev[ImGuiNavInput_COUNT]",
         "size": 22,
         "type": "float"
       },
       {
+        "comment": " // Queue of _characters_ input (obtained by platform back-end). Fill using AddInputCharacter() helper.",
         "name": "InputQueueCharacters",
         "template_type": "ImWchar",
         "type": "ImVector_ImWchar"
@@ -2463,141 +2867,173 @@
     ],
     "ImGuiInputTextCallbackData": [
       {
+        "comment": " // One ImGuiInputTextFlags_Callback*    // Read-only",
         "name": "EventFlag",
         "type": "ImGuiInputTextFlags"
       },
       {
+        "comment": " // What user passed to InputText()      // Read-only",
         "name": "Flags",
         "type": "ImGuiInputTextFlags"
       },
       {
+        "comment": "\n    // - If you know your edits are not going to resize the underlying buffer allocation, you may modify the contents of 'Buf[]' directly. You need to update 'BufTextLen' accordingly (0 <= BufTextLen < BufSize) and set 'BufDirty'' to true so InputText can update its internal state.",
         "name": "UserData",
         "type": "void*"
       },
       {
+        "comment": " // Character input                      // Read-write   // [CharFilter] Replace character with another one, or set to zero to drop. return 1 is equivalent to setting EventChar=0;",
         "name": "EventChar",
         "type": "ImWchar"
       },
       {
+        "comment": " // Key pressed (Up/Down/TAB)            // Read-only    // [Completion,History]",
         "name": "EventKey",
         "type": "ImGuiKey"
       },
       {
+        "comment": " // Text buffer                          // Read-write   // [Resize] Can replace pointer / [Completion,History,Always] Only write to pointed data, don't replace the actual pointer!",
         "name": "Buf",
         "type": "char*"
       },
       {
+        "comment": " // Text length (in bytes)               // Read-write   // [Resize,Completion,History,Always] Exclude zero-terminator storage. In C land: == strlen(some_text), in C++ land: string.length()",
         "name": "BufTextLen",
         "type": "int"
       },
       {
+        "comment": " // Buffer size (in bytes) = capacity+1  // Read-only    // [Resize,Completion,History,Always] Include zero-terminator storage. In C land == ARRAYSIZE(my_char_array), in C++ land: string.capacity()+1",
         "name": "BufSize",
         "type": "int"
       },
       {
+        "comment": " // Set if you modify Buf/BufTextLen!    // Write        // [Completion,History,Always]",
         "name": "BufDirty",
         "type": "bool"
       },
       {
+        "comment": " //                                      // Read-write   // [Completion,History,Always]",
         "name": "CursorPos",
         "type": "int"
       },
       {
+        "comment": " //                                      // Read-write   // [Completion,History,Always] == to SelectionEnd when no selection)",
         "name": "SelectionStart",
         "type": "int"
       },
       {
+        "comment": "\n    // Use those function to benefit from the CallbackResize behaviors. Calling those function reset the selection.",
         "name": "SelectionEnd",
         "type": "int"
       }
     ],
     "ImGuiListClipper": [
       {
+        "comment": "",
         "name": "StartPosY",
         "type": "float"
       },
       {
+        "comment": "",
         "name": "ItemsHeight",
         "type": "float"
       },
       {
+        "comment": "\n    // If you don't specify an items_height, you NEED to call Step(). If you specify items_height you may call the old Begin()/End() api directly, but prefer calling Step().",
         "name": "ItemsCount",
         "type": "int"
       },
       {
+        "comment": "\n    // If you don't specify an items_height, you NEED to call Step(). If you specify items_height you may call the old Begin()/End() api directly, but prefer calling Step().",
         "name": "StepNo",
         "type": "int"
       },
       {
+        "comment": "\n    // If you don't specify an items_height, you NEED to call Step(). If you specify items_height you may call the old Begin()/End() api directly, but prefer calling Step().",
         "name": "DisplayStart",
         "type": "int"
       },
       {
+        "comment": "\n    // If you don't specify an items_height, you NEED to call Step(). If you specify items_height you may call the old Begin()/End() api directly, but prefer calling Step().",
         "name": "DisplayEnd",
         "type": "int"
       }
     ],
     "ImGuiOnceUponAFrame": [
       {
+        "comment": "",
         "name": "RefFrame",
         "type": "int"
       }
     ],
     "ImGuiPayload": [
       {
+        "comment": " // Data (copied and owned by dear imgui)",
         "name": "Data",
         "type": "void*"
       },
       {
+        "comment": "\n    // [Internal]",
         "name": "DataSize",
         "type": "int"
       },
       {
+        "comment": " // Source item id",
         "name": "SourceId",
         "type": "ImGuiID"
       },
       {
+        "comment": " // Source parent id (if available)",
         "name": "SourceParentId",
         "type": "ImGuiID"
       },
       {
+        "comment": " // Data timestamp",
         "name": "DataFrameCount",
         "type": "int"
       },
       {
+        "comment": " // Data type tag (short user-supplied string, 32 characters max)",
         "name": "DataType[32+1]",
         "size": 33,
         "type": "char"
       },
       {
+        "comment": " // Set when AcceptDragDropPayload() was called and mouse has been hovering the target item (nb: handle overlapping drag targets)",
         "name": "Preview",
         "type": "bool"
       },
       {
+        "comment": " // Set when AcceptDragDropPayload() was called and mouse button is released over the target item.",
         "name": "Delivery",
         "type": "bool"
       }
     ],
     "ImGuiSizeCallbackData": [
       {
+        "comment": " // Read-only.   What user passed to SetNextWindowSizeConstraints()",
         "name": "UserData",
         "type": "void*"
       },
       {
+        "comment": " // Read-only.   Window position, for reference.",
         "name": "Pos",
         "type": "ImVec2"
       },
       {
+        "comment": " // Read-only.   Current window size.",
         "name": "CurrentSize",
         "type": "ImVec2"
       },
       {
+        "comment": " // Read-write.  Desired size, based on user's mouse position. Write to this field to restrain resizing.",
         "name": "DesiredSize",
         "type": "ImVec2"
       }
     ],
     "ImGuiStorage": [
       {
+        "comment": "\n    // - Sorted insertion is costly, paid once. A typical frame shouldn't need to insert any new pair.",
         "name": "Data",
         "template_type": "Pair",
         "type": "ImVector_Pair"
@@ -2605,134 +3041,167 @@
     ],
     "ImGuiStyle": [
       {
+        "comment": " // Global alpha applies to everything in ImGui.",
         "name": "Alpha",
         "type": "float"
       },
       {
+        "comment": " // Padding within a window.",
         "name": "WindowPadding",
         "type": "ImVec2"
       },
       {
+        "comment": " // Radius of window corners rounding. Set to 0.0f to have rectangular windows.",
         "name": "WindowRounding",
         "type": "float"
       },
       {
+        "comment": " // Thickness of border around windows. Generally set to 0.0f or 1.0f. (Other values are not well tested and more CPU/GPU costly).",
         "name": "WindowBorderSize",
         "type": "float"
       },
       {
+        "comment": " // Minimum window size. This is a global setting. If you want to constraint individual windows, use SetNextWindowSizeConstraints().",
         "name": "WindowMinSize",
         "type": "ImVec2"
       },
       {
+        "comment": " // Alignment for title bar text. Defaults to (0.0f,0.5f) for left-aligned,vertically centered.",
         "name": "WindowTitleAlign",
         "type": "ImVec2"
       },
       {
+        "comment": " // Radius of child window corners rounding. Set to 0.0f to have rectangular windows.",
         "name": "ChildRounding",
         "type": "float"
       },
       {
+        "comment": " // Thickness of border around child windows. Generally set to 0.0f or 1.0f. (Other values are not well tested and more CPU/GPU costly).",
         "name": "ChildBorderSize",
         "type": "float"
       },
       {
+        "comment": " // Radius of popup window corners rounding. (Note that tooltip windows use WindowRounding)",
         "name": "PopupRounding",
         "type": "float"
       },
       {
+        "comment": " // Thickness of border around popup/tooltip windows. Generally set to 0.0f or 1.0f. (Other values are not well tested and more CPU/GPU costly).",
         "name": "PopupBorderSize",
         "type": "float"
       },
       {
+        "comment": " // Padding within a framed rectangle (used by most widgets).",
         "name": "FramePadding",
         "type": "ImVec2"
       },
       {
+        "comment": " // Radius of frame corners rounding. Set to 0.0f to have rectangular frame (used by most widgets).",
         "name": "FrameRounding",
         "type": "float"
       },
       {
+        "comment": " // Thickness of border around frames. Generally set to 0.0f or 1.0f. (Other values are not well tested and more CPU/GPU costly).",
         "name": "FrameBorderSize",
         "type": "float"
       },
       {
+        "comment": " // Horizontal and vertical spacing between widgets/lines.",
         "name": "ItemSpacing",
         "type": "ImVec2"
       },
       {
+        "comment": " // Horizontal and vertical spacing between within elements of a composed widget (e.g. a slider and its label).",
         "name": "ItemInnerSpacing",
         "type": "ImVec2"
       },
       {
+        "comment": " // Expand reactive bounding box for touch-based system where touch position is not accurate enough. Unfortunately we don't sort widgets so priority on overlap will always be given to the first widget. So don't grow this too much!",
         "name": "TouchExtraPadding",
         "type": "ImVec2"
       },
       {
+        "comment": " // Horizontal indentation when e.g. entering a tree node. Generally == (FontSize + FramePadding.x*2).",
         "name": "IndentSpacing",
         "type": "float"
       },
       {
+        "comment": " // Minimum horizontal spacing between two columns.",
         "name": "ColumnsMinSpacing",
         "type": "float"
       },
       {
+        "comment": " // Width of the vertical scrollbar, Height of the horizontal scrollbar.",
         "name": "ScrollbarSize",
         "type": "float"
       },
       {
+        "comment": " // Radius of grab corners for scrollbar.",
         "name": "ScrollbarRounding",
         "type": "float"
       },
       {
+        "comment": " // Minimum width/height of a grab box for slider/scrollbar.",
         "name": "GrabMinSize",
         "type": "float"
       },
       {
+        "comment": " // Radius of grabs corners rounding. Set to 0.0f to have rectangular slider grabs.",
         "name": "GrabRounding",
         "type": "float"
       },
       {
+        "comment": " // Radius of upper corners of a tab. Set to 0.0f to have rectangular tabs.",
         "name": "TabRounding",
         "type": "float"
       },
       {
+        "comment": " // Thickness of border around tabs.",
         "name": "TabBorderSize",
         "type": "float"
       },
       {
+        "comment": " // Alignment of button text when button is larger than text. Defaults to (0.5f, 0.5f) (centered).",
         "name": "ButtonTextAlign",
         "type": "ImVec2"
       },
       {
+        "comment": " // Alignment of selectable text when selectable is larger than text. Defaults to (0.0f, 0.0f) (top-left aligned).",
         "name": "SelectableTextAlign",
         "type": "ImVec2"
       },
       {
+        "comment": " // Window position are clamped to be visible within the display area by at least this amount. Only applies to regular windows.",
         "name": "DisplayWindowPadding",
         "type": "ImVec2"
       },
       {
+        "comment": " // If you cannot see the edges of your screen (e.g. on a TV) increase the safe area padding. Apply to popups/tooltips as well regular windows. NB: Prefer configuring your TV sets correctly!",
         "name": "DisplaySafeAreaPadding",
         "type": "ImVec2"
       },
       {
+        "comment": " // Scale software rendered mouse cursor (when io.MouseDrawCursor is enabled). May be removed later.",
         "name": "MouseCursorScale",
         "type": "float"
       },
       {
+        "comment": " // Enable anti-aliasing on lines/borders. Disable if you are really tight on CPU/GPU.",
         "name": "AntiAliasedLines",
         "type": "bool"
       },
       {
+        "comment": " // Enable anti-aliasing on filled shapes (rounded rectangles, circles, etc.)",
         "name": "AntiAliasedFill",
         "type": "bool"
       },
       {
+        "comment": " // Tessellation tolerance when using PathBezierCurveTo() without a specific number of segments. Decrease for highly tessellated curves (higher quality, more polygons), increase to reduce quality.",
         "name": "CurveTessellationTol",
         "type": "float"
       },
       {
+        "comment": "",
         "name": "Colors[ImGuiCol_COUNT]",
         "size": 48,
         "type": "ImVec4"
@@ -2740,6 +3209,7 @@
     ],
     "ImGuiTextBuffer": [
       {
+        "comment": "",
         "name": "Buf",
         "template_type": "char",
         "type": "ImVector_char"
@@ -2747,64 +3217,77 @@
     ],
     "ImGuiTextFilter": [
       {
+        "comment": "",
         "name": "InputBuf[256]",
         "size": 256,
         "type": "char"
       },
       {
+        "comment": "",
         "name": "Filters",
         "template_type": "TextRange",
         "type": "ImVector_TextRange"
       },
       {
+        "comment": "",
         "name": "CountGrep",
         "type": "int"
       }
     ],
     "ImVec2": [
       {
+        "comment": "",
         "name": "x",
         "type": "float"
       },
       {
+        "comment": "",
         "name": "y",
         "type": "float"
       }
     ],
     "ImVec4": [
       {
+        "comment": "",
         "name": "x",
         "type": "float"
       },
       {
+        "comment": "",
         "name": "y",
         "type": "float"
       },
       {
+        "comment": "",
         "name": "z",
         "type": "float"
       },
       {
+        "comment": "",
         "name": "w",
         "type": "float"
       }
     ],
     "Pair": [
       {
+        "comment": "",
         "name": "key",
         "type": "ImGuiID"
       },
       {
+        "comment": "",
         "name": "",
         "type": "union { int val_i; float val_f; void* val_p;}"
       }
     ],
     "TextRange": [
       {
+        "comment": "",
         "name": "b",
         "type": "const char*"
       },
       {
+        "comment": "",
         "name": "e",
         "type": "const char*"
       }

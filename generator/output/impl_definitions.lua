@@ -12,6 +12,8 @@ defs["ImGui_ImplGlfw_CharCallback"][1]["argsT"][2]["type"] = "unsigned int"
 defs["ImGui_ImplGlfw_CharCallback"][1]["argsoriginal"] = "(GLFWwindow* window,unsigned int c)"
 defs["ImGui_ImplGlfw_CharCallback"][1]["call_args"] = "(window,c)"
 defs["ImGui_ImplGlfw_CharCallback"][1]["cimguiname"] = "ImGui_ImplGlfw_CharCallback"
+defs["ImGui_ImplGlfw_CharCallback"][1]["comment"] = "\
+// Set default OpenGL3 loader to be gl3w"
 defs["ImGui_ImplGlfw_CharCallback"][1]["defaults"] = {}
 defs["ImGui_ImplGlfw_CharCallback"][1]["funcname"] = "ImGui_ImplGlfw_CharCallback"
 defs["ImGui_ImplGlfw_CharCallback"][1]["ov_cimguiname"] = "ImGui_ImplGlfw_CharCallback"
@@ -121,6 +123,8 @@ defs["ImGui_ImplGlfw_NewFrame"][1]["argsT"] = {}
 defs["ImGui_ImplGlfw_NewFrame"][1]["argsoriginal"] = "()"
 defs["ImGui_ImplGlfw_NewFrame"][1]["call_args"] = "()"
 defs["ImGui_ImplGlfw_NewFrame"][1]["cimguiname"] = "ImGui_ImplGlfw_NewFrame"
+defs["ImGui_ImplGlfw_NewFrame"][1]["comment"] = "\
+// InitXXX function with 'install_callbacks=false': do not install GLFW callbacks. You will need to call them yourself from your own GLFW callbacks."
 defs["ImGui_ImplGlfw_NewFrame"][1]["defaults"] = {}
 defs["ImGui_ImplGlfw_NewFrame"][1]["funcname"] = "ImGui_ImplGlfw_NewFrame"
 defs["ImGui_ImplGlfw_NewFrame"][1]["ov_cimguiname"] = "ImGui_ImplGlfw_NewFrame"
@@ -200,6 +204,8 @@ defs["ImGui_ImplOpenGL2_DestroyDeviceObjects"][1]["argsT"] = {}
 defs["ImGui_ImplOpenGL2_DestroyDeviceObjects"][1]["argsoriginal"] = "()"
 defs["ImGui_ImplOpenGL2_DestroyDeviceObjects"][1]["call_args"] = "()"
 defs["ImGui_ImplOpenGL2_DestroyDeviceObjects"][1]["cimguiname"] = "ImGui_ImplOpenGL2_DestroyDeviceObjects"
+defs["ImGui_ImplOpenGL2_DestroyDeviceObjects"][1]["comment"] = "\
+// https://github.com/ocornut/imgui"
 defs["ImGui_ImplOpenGL2_DestroyDeviceObjects"][1]["defaults"] = {}
 defs["ImGui_ImplOpenGL2_DestroyDeviceObjects"][1]["funcname"] = "ImGui_ImplOpenGL2_DestroyDeviceObjects"
 defs["ImGui_ImplOpenGL2_DestroyDeviceObjects"][1]["ov_cimguiname"] = "ImGui_ImplOpenGL2_DestroyDeviceObjects"
@@ -259,6 +265,8 @@ defs["ImGui_ImplOpenGL2_RenderDrawData"][1]["argsT"][1]["type"] = "ImDrawData*"
 defs["ImGui_ImplOpenGL2_RenderDrawData"][1]["argsoriginal"] = "(ImDrawData* draw_data)"
 defs["ImGui_ImplOpenGL2_RenderDrawData"][1]["call_args"] = "(draw_data)"
 defs["ImGui_ImplOpenGL2_RenderDrawData"][1]["cimguiname"] = "ImGui_ImplOpenGL2_RenderDrawData"
+defs["ImGui_ImplOpenGL2_RenderDrawData"][1]["comment"] = "\
+// Called by Init/NewFrame/Shutdown"
 defs["ImGui_ImplOpenGL2_RenderDrawData"][1]["defaults"] = {}
 defs["ImGui_ImplOpenGL2_RenderDrawData"][1]["funcname"] = "ImGui_ImplOpenGL2_RenderDrawData"
 defs["ImGui_ImplOpenGL2_RenderDrawData"][1]["ov_cimguiname"] = "ImGui_ImplOpenGL2_RenderDrawData"
@@ -315,6 +323,8 @@ defs["ImGui_ImplOpenGL3_DestroyDeviceObjects"][1]["argsT"] = {}
 defs["ImGui_ImplOpenGL3_DestroyDeviceObjects"][1]["argsoriginal"] = "()"
 defs["ImGui_ImplOpenGL3_DestroyDeviceObjects"][1]["call_args"] = "()"
 defs["ImGui_ImplOpenGL3_DestroyDeviceObjects"][1]["cimguiname"] = "ImGui_ImplOpenGL3_DestroyDeviceObjects"
+defs["ImGui_ImplOpenGL3_DestroyDeviceObjects"][1]["comment"] = "\
+// The GL2 code is unable to reset attributes or even call e.g. \"glUseProgram(0)\" because they don't exist in that API."
 defs["ImGui_ImplOpenGL3_DestroyDeviceObjects"][1]["defaults"] = {}
 defs["ImGui_ImplOpenGL3_DestroyDeviceObjects"][1]["funcname"] = "ImGui_ImplOpenGL3_DestroyDeviceObjects"
 defs["ImGui_ImplOpenGL3_DestroyDeviceObjects"][1]["ov_cimguiname"] = "ImGui_ImplOpenGL3_DestroyDeviceObjects"
@@ -378,6 +388,8 @@ defs["ImGui_ImplOpenGL3_RenderDrawData"][1]["argsT"][1]["type"] = "ImDrawData*"
 defs["ImGui_ImplOpenGL3_RenderDrawData"][1]["argsoriginal"] = "(ImDrawData* draw_data)"
 defs["ImGui_ImplOpenGL3_RenderDrawData"][1]["call_args"] = "(draw_data)"
 defs["ImGui_ImplOpenGL3_RenderDrawData"][1]["cimguiname"] = "ImGui_ImplOpenGL3_RenderDrawData"
+defs["ImGui_ImplOpenGL3_RenderDrawData"][1]["comment"] = "\
+// Called by Init/NewFrame/Shutdown"
 defs["ImGui_ImplOpenGL3_RenderDrawData"][1]["defaults"] = {}
 defs["ImGui_ImplOpenGL3_RenderDrawData"][1]["funcname"] = "ImGui_ImplOpenGL3_RenderDrawData"
 defs["ImGui_ImplOpenGL3_RenderDrawData"][1]["ov_cimguiname"] = "ImGui_ImplOpenGL3_RenderDrawData"

@@ -2038,7 +2038,7 @@
         "type": "ImVec2"
       },
       {
-        "comment": "\n    // Functions",
+        "comment": " // Amount of pixels for each unit of DisplaySize. Based on io.DisplayFramebufferScale. Generally (1,1) on normal display, (2,2) on OSX with Retina display.\n    // Functions",
         "name": "FramebufferScale",
         "type": "ImVec2"
       }
@@ -2063,7 +2063,7 @@
         "type": "ImVector_ImDrawVert"
       },
       {
-        "comment": "\n    // [Internal, used while building lists]",
+        "comment": " // Flags, you may poke into these to adjust anti-aliasing settings per-primitive.\n    // [Internal, used while building lists]",
         "name": "Flags",
         "type": "ImDrawListFlags"
       },
@@ -2121,7 +2121,7 @@
         "type": "int"
       },
       {
-        "comment": "\n    // If you want to create ImDrawList instances, pass them ImGui::GetDrawListSharedData() or create and use your own ImDrawListSharedData (so you can use ImDrawList without ImGui)",
+        "comment": " // [Internal] draw channels for columns API (not resized down so _ChannelsCount may be smaller than _Channels.Size)\n    // If you want to create ImDrawList instances, pass them ImGui::GetDrawListSharedData() or create and use your own ImDrawListSharedData (so you can use ImDrawList without ImGui)",
         "name": "_Channels",
         "template_type": "ImDrawChannel",
         "type": "ImVector_ImDrawChannel"
@@ -2157,7 +2157,7 @@
         "type": "float"
       },
       {
-        "comment": "\n    // Members: Hot ~36/48 bytes (for CalcTextSize + render loop)",
+        "comment": " // 4     // in  //            // Height of characters/line, set during loading (don't change after loading)\n    // Members: Hot ~36/48 bytes (for CalcTextSize + render loop)",
         "name": "FontSize",
         "type": "float"
       },
@@ -2179,7 +2179,7 @@
         "type": "const ImFontGlyph*"
       },
       {
-        "comment": "\n    // Members: Cold ~32/40 bytes",
+        "comment": " // 8     // in  // = (0,0)    // Offset font rendering by xx pixels\n    // Members: Cold ~32/40 bytes",
         "name": "DisplayOffset",
         "type": "ImVec2"
       },
@@ -2224,7 +2224,7 @@
         "type": "int"
       },
       {
-        "comment": "\n    // Methods",
+        "comment": " // 1     // out //\n    // Methods",
         "name": "DirtyLookupTables",
         "type": "bool"
       }
@@ -2251,7 +2251,7 @@
         "type": "int"
       },
       {
-        "comment": "\n    // NB: Access texture data via GetTexData*() calls! Which will setup a default font for you.",
+        "comment": " // Padding between glyphs within texture in pixels. Defaults to 1. If your rendering method doesn't rely on bilinear filtering you may set this to 0.\n    // [Internal]\n    // NB: Access texture data via GetTexData*() calls! Which will setup a default font for you.",
         "name": "TexGlyphPadding",
         "type": "int"
       },
@@ -2387,7 +2387,7 @@
         "type": "unsigned int"
       },
       {
-        "comment": "\n    // [Internal]",
+        "comment": " // 1.0f     // Brighten (>1.0f) or darken (<1.0f) font output. Brightening small fonts may be a good workaround to make them more readable.\n    // [Internal]",
         "name": "RasterizerMultiply",
         "type": "float"
       },
@@ -2556,7 +2556,7 @@
         "type": "ImFont*"
       },
       {
-        "comment": "\n    // Miscellaneous options",
+        "comment": " // = (1, 1)         // For retina display or other situations where window coordinates are different from framebuffer coordinates. This generally ends up in ImDrawData::FramebufferScale.\n    // Miscellaneous options",
         "name": "DisplayFramebufferScale",
         "type": "ImVec2"
       },
@@ -2581,7 +2581,7 @@
         "type": "bool"
       },
       {
-        "comment": "\n    // Optional: Platform/Renderer back-end name (informational only! will be displayed in About Window) + User data for back-end/wrappers to store their own stuff.",
+        "comment": " // = false       // [BETA] Set to true to only allow moving windows when clicked+dragged from the title bar. Windows without a title bar are not affected.\n    //------------------------------------------------------------------\n    // Platform Functions\n    // (the imgui_impl_xxxx back-end files are setting those up for you)\n    //------------------------------------------------------------------\n    // Optional: Platform/Renderer back-end name (informational only! will be displayed in About Window) + User data for back-end/wrappers to store their own stuff.",
         "name": "ConfigWindowsMoveFromTitleBarOnly",
         "type": "bool"
       },
@@ -2606,7 +2606,7 @@
         "type": "void*"
       },
       {
-        "comment": "\n    // (default to use native Win32 clipboard on Windows, otherwise uses a private clipboard. Override to access OS clipboard on other architectures)",
+        "comment": " // = NULL\n    // Optional: Access OS clipboard\n    // (default to use native Win32 clipboard on Windows, otherwise uses a private clipboard. Override to access OS clipboard on other architectures)",
         "name": "BackendLanguageUserData",
         "type": "void*"
       },
@@ -2621,7 +2621,7 @@
         "type": "void(*)(void* user_data,const char* text)"
       },
       {
-        "comment": "\n    // (default to use native imm32 api on Windows)",
+        "comment": "\n    // Optional: Notify OS Input Method Editor of the screen position of your cursor for text input position (e.g. when using Japanese/Chinese IME on Windows)\n    // (default to use native imm32 api on Windows)",
         "name": "ClipboardUserData",
         "type": "void*"
       },
@@ -2631,12 +2631,12 @@
         "type": "void(*)(int x,int y)"
       },
       {
-        "comment": "\n    // This is only here to keep ImGuiIO the same size/layout, so that IMGUI_DISABLE_OBSOLETE_FUNCTIONS can exceptionally be used outside of imconfig.h.",
+        "comment": " // = NULL           // (Windows) Set this to your HWND to get automatic IME cursor positioning.\n    // This is only here to keep ImGuiIO the same size/layout, so that IMGUI_DISABLE_OBSOLETE_FUNCTIONS can exceptionally be used outside of imconfig.h.",
         "name": "ImeWindowHandle",
         "type": "void*"
       },
       {
-        "comment": "\n    //------------------------------------------------------------------",
+        "comment": "\n    //------------------------------------------------------------------\n    // Input - Fill before calling NewFrame()\n    //------------------------------------------------------------------",
         "name": "RenderDrawListsFnUnused",
         "type": "void*"
       },
@@ -2688,7 +2688,7 @@
         "type": "bool"
       },
       {
-        "comment": "\n    // Functions",
+        "comment": " // Gamepad inputs. Cleared back to zero by EndFrame(). Keyboard keys will be auto-mapped and be written here by NewFrame().\n    // Functions",
         "name": "NavInputs[ImGuiNavInput_COUNT]",
         "size": 22,
         "type": "float"
@@ -2759,7 +2759,7 @@
         "type": "int"
       },
       {
-        "comment": "\n    //------------------------------------------------------------------",
+        "comment": " // Mouse delta. Note that this is zero if either current or previous position are invalid (-FLT_MAX,-FLT_MAX), so a disappearing/reappearing mouse won't have a huge delta.\n    //------------------------------------------------------------------\n    // [Internal] ImGui will maintain those fields. Forward compatibility not guaranteed!\n    //------------------------------------------------------------------",
         "name": "MouseDelta",
         "type": "ImVec2"
       },
@@ -2877,7 +2877,7 @@
         "type": "ImGuiInputTextFlags"
       },
       {
-        "comment": "\n    // - If you know your edits are not going to resize the underlying buffer allocation, you may modify the contents of 'Buf[]' directly. You need to update 'BufTextLen' accordingly (0 <= BufTextLen < BufSize) and set 'BufDirty'' to true so InputText can update its internal state.",
+        "comment": " // What user passed to InputText()      // Read-only\n    // Arguments for the different callback events\n    // - To modify the text buffer in a callback, prefer using the InsertChars() / DeleteChars() function. InsertChars() will take care of calling the resize callback if necessary.\n    // - If you know your edits are not going to resize the underlying buffer allocation, you may modify the contents of 'Buf[]' directly. You need to update 'BufTextLen' accordingly (0 <= BufTextLen < BufSize) and set 'BufDirty'' to true so InputText can update its internal state.",
         "name": "UserData",
         "type": "void*"
       },
@@ -2922,7 +2922,7 @@
         "type": "int"
       },
       {
-        "comment": "\n    // Use those function to benefit from the CallbackResize behaviors. Calling those function reset the selection.",
+        "comment": " //                                      // Read-write   // [Completion,History,Always]\n    // Helper functions for text manipulation.\n    // Use those function to benefit from the CallbackResize behaviors. Calling those function reset the selection.",
         "name": "SelectionEnd",
         "type": "int"
       }
@@ -2939,22 +2939,22 @@
         "type": "float"
       },
       {
-        "comment": "\n    // If you don't specify an items_height, you NEED to call Step(). If you specify items_height you may call the old Begin()/End() api directly, but prefer calling Step().",
+        "comment": "\n    // items_count:  Use -1 to ignore (you can call Begin later). Use INT_MAX if you don't know how many items you have (in which case the cursor won't be advanced in the final step).\n    // items_height: Use -1.0f to be calculated automatically on first step. Otherwise pass in the distance between your items, typically GetTextLineHeightWithSpacing() or GetFrameHeightWithSpacing().\n    // If you don't specify an items_height, you NEED to call Step(). If you specify items_height you may call the old Begin()/End() api directly, but prefer calling Step().",
         "name": "ItemsCount",
         "type": "int"
       },
       {
-        "comment": "\n    // If you don't specify an items_height, you NEED to call Step(). If you specify items_height you may call the old Begin()/End() api directly, but prefer calling Step().",
+        "comment": "\n    // items_count:  Use -1 to ignore (you can call Begin later). Use INT_MAX if you don't know how many items you have (in which case the cursor won't be advanced in the final step).\n    // items_height: Use -1.0f to be calculated automatically on first step. Otherwise pass in the distance between your items, typically GetTextLineHeightWithSpacing() or GetFrameHeightWithSpacing().\n    // If you don't specify an items_height, you NEED to call Step(). If you specify items_height you may call the old Begin()/End() api directly, but prefer calling Step().",
         "name": "StepNo",
         "type": "int"
       },
       {
-        "comment": "\n    // If you don't specify an items_height, you NEED to call Step(). If you specify items_height you may call the old Begin()/End() api directly, but prefer calling Step().",
+        "comment": "\n    // items_count:  Use -1 to ignore (you can call Begin later). Use INT_MAX if you don't know how many items you have (in which case the cursor won't be advanced in the final step).\n    // items_height: Use -1.0f to be calculated automatically on first step. Otherwise pass in the distance between your items, typically GetTextLineHeightWithSpacing() or GetFrameHeightWithSpacing().\n    // If you don't specify an items_height, you NEED to call Step(). If you specify items_height you may call the old Begin()/End() api directly, but prefer calling Step().",
         "name": "DisplayStart",
         "type": "int"
       },
       {
-        "comment": "\n    // If you don't specify an items_height, you NEED to call Step(). If you specify items_height you may call the old Begin()/End() api directly, but prefer calling Step().",
+        "comment": "\n    // items_count:  Use -1 to ignore (you can call Begin later). Use INT_MAX if you don't know how many items you have (in which case the cursor won't be advanced in the final step).\n    // items_height: Use -1.0f to be calculated automatically on first step. Otherwise pass in the distance between your items, typically GetTextLineHeightWithSpacing() or GetFrameHeightWithSpacing().\n    // If you don't specify an items_height, you NEED to call Step(). If you specify items_height you may call the old Begin()/End() api directly, but prefer calling Step().",
         "name": "DisplayEnd",
         "type": "int"
       }
@@ -2973,7 +2973,7 @@
         "type": "void*"
       },
       {
-        "comment": "\n    // [Internal]",
+        "comment": " // Data size\n    // [Internal]",
         "name": "DataSize",
         "type": "int"
       },
@@ -3033,7 +3033,7 @@
     ],
     "ImGuiStorage": [
       {
-        "comment": "\n    // - Sorted insertion is costly, paid once. A typical frame shouldn't need to insert any new pair.",
+        "comment": "\n    // - Get***() functions find pair, never add/allocate. Pairs are sorted so a query is O(log N)\n    // - Set***() functions find pair, insertion on demand if missing.\n    // - Sorted insertion is costly, paid once. A typical frame shouldn't need to insert any new pair.",
         "name": "Data",
         "template_type": "Pair",
         "type": "ImVector_Pair"

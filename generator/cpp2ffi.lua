@@ -224,7 +224,10 @@ local function parseItems(txt,dumpit)
 				if re_name=="comment_re" or re_name=="comment2_re" then
 					table.insert(outercomms,item)
 					-- comments to previous item
-					if itemarr[#itemarr] then itemarr[#itemarr].comments = item end
+					if itemarr[#itemarr] then 
+						local prev = itemarr[#itemarr].comments or ""
+						itemarr[#itemarr].comments = prev .. item 
+					end
 				else
 					--item,inercoms = clean_comments(item)
 					item = item:gsub("extern __attribute__%(%(dllexport%)%) ","")

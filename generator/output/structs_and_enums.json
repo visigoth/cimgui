@@ -2038,14 +2038,14 @@
         "type": "ImVec2"
       },
       {
-        "comment": " // Amount of pixels for each unit of DisplaySize. Based on io.DisplayFramebufferScale. Generally (1,1) on normal display, (2,2) on OSX with Retina display.\n    // Functions",
+        "comment": " // Amount of pixels for each unit of DisplaySize. Based on io.DisplayFramebufferScale. Generally (1,1) on normal display, (2,2) on OSX with Retina display.",
         "name": "FramebufferScale",
         "type": "ImVec2"
       }
     ],
     "ImDrawList": [
       {
-        "comment": " // Draw commands. Typically 1 command = 1 GPU draw call, unless the command is a callback.",
+        "comment": "\n    // This is what you have to render // Draw commands. Typically 1 command = 1 GPU draw call, unless the command is a callback.",
         "name": "CmdBuffer",
         "template_type": "ImDrawCmd",
         "type": "ImVector_ImDrawCmd"
@@ -2063,12 +2063,12 @@
         "type": "ImVector_ImDrawVert"
       },
       {
-        "comment": " // Flags, you may poke into these to adjust anti-aliasing settings per-primitive.\n    // [Internal, used while building lists]",
+        "comment": " // Flags, you may poke into these to adjust anti-aliasing settings per-primitive.",
         "name": "Flags",
         "type": "ImDrawListFlags"
       },
       {
-        "comment": " // Pointer to shared draw data (you can use ImGui::GetDrawListSharedData() to get the one from current ImGui context)",
+        "comment": "\n    // [Internal, used while building lists] // Pointer to shared draw data (you can use ImGui::GetDrawListSharedData() to get the one from current ImGui context)",
         "name": "_Data",
         "type": "const ImDrawListSharedData*"
       },
@@ -2121,7 +2121,7 @@
         "type": "int"
       },
       {
-        "comment": " // [Internal] draw channels for columns API (not resized down so _ChannelsCount may be smaller than _Channels.Size)\n    // If you want to create ImDrawList instances, pass them ImGui::GetDrawListSharedData() or create and use your own ImDrawListSharedData (so you can use ImDrawList without ImGui)",
+        "comment": " // [Internal] draw channels for columns API (not resized down so _ChannelsCount may be smaller than _Channels.Size)",
         "name": "_Channels",
         "template_type": "ImDrawChannel",
         "type": "ImVector_ImDrawChannel"
@@ -2146,7 +2146,7 @@
     ],
     "ImFont": [
       {
-        "comment": " // 12-16 // out //            // Sparse. Glyphs->AdvanceX in a directly indexable way (cache-friendly for CalcTextSize functions which only this this info, and are often bottleneck in large UI).",
+        "comment": "\n    // Members: Hot ~20/24 bytes (for CalcTextSize) // 12-16 // out //            // Sparse. Glyphs->AdvanceX in a directly indexable way (cache-friendly for CalcTextSize functions which only this this info, and are often bottleneck in large UI).",
         "name": "IndexAdvanceX",
         "template_type": "float",
         "type": "ImVector_float"
@@ -2157,12 +2157,12 @@
         "type": "float"
       },
       {
-        "comment": " // 4     // in  //            // Height of characters/line, set during loading (don't change after loading)\n    // Members: Hot ~36/48 bytes (for CalcTextSize + render loop)",
+        "comment": " // 4     // in  //            // Height of characters/line, set during loading (don't change after loading)",
         "name": "FontSize",
         "type": "float"
       },
       {
-        "comment": " // 12-16 // out //            // Sparse. Index glyphs by Unicode code-point.",
+        "comment": "\n    // Members: Hot ~36/48 bytes (for CalcTextSize + render loop) // 12-16 // out //            // Sparse. Index glyphs by Unicode code-point.",
         "name": "IndexLookup",
         "template_type": "ImWchar",
         "type": "ImVector_ImWchar"
@@ -2179,12 +2179,12 @@
         "type": "const ImFontGlyph*"
       },
       {
-        "comment": " // 8     // in  // = (0,0)    // Offset font rendering by xx pixels\n    // Members: Cold ~32/40 bytes",
+        "comment": " // 8     // in  // = (0,0)    // Offset font rendering by xx pixels",
         "name": "DisplayOffset",
         "type": "ImVec2"
       },
       {
-        "comment": " // 4-8   // out //            // What we has been loaded into",
+        "comment": "\n    // Members: Cold ~32/40 bytes // 4-8   // out //            // What we has been loaded into",
         "name": "ContainerAtlas",
         "type": "ImFontAtlas*"
       },
@@ -2224,14 +2224,14 @@
         "type": "int"
       },
       {
-        "comment": " // 1     // out //\n    // Methods",
+        "comment": " // 1     // out //",
         "name": "DirtyLookupTables",
         "type": "bool"
       }
     ],
     "ImFontAtlas": [
       {
-        "comment": " // Marked as Locked by ImGui::NewFrame() so attempt to modify the atlas will assert.",
+        "comment": "\n    //-------------------------------------------\n\n    // Members\n\n    //------------------------------------------- // Marked as Locked by ImGui::NewFrame() so attempt to modify the atlas will assert.",
         "name": "Locked",
         "type": "bool"
       },
@@ -2251,12 +2251,12 @@
         "type": "int"
       },
       {
-        "comment": " // Padding between glyphs within texture in pixels. Defaults to 1. If your rendering method doesn't rely on bilinear filtering you may set this to 0.\n    // [Internal]\n    // NB: Access texture data via GetTexData*() calls! Which will setup a default font for you.",
+        "comment": " // Padding between glyphs within texture in pixels. Defaults to 1. If your rendering method doesn't rely on bilinear filtering you may set this to 0.",
         "name": "TexGlyphPadding",
         "type": "int"
       },
       {
-        "comment": " // 1 component per pixel, each component is unsigned 8-bit. Total size = TexWidth * TexHeight",
+        "comment": "\n    // [Internal]\n\n    // NB: Access texture data via GetTexData*() calls! Which will setup a default font for you. // 1 component per pixel, each component is unsigned 8-bit. Total size = TexWidth * TexHeight",
         "name": "TexPixelsAlpha8",
         "type": "unsigned char*"
       },
@@ -2387,12 +2387,12 @@
         "type": "unsigned int"
       },
       {
-        "comment": " // 1.0f     // Brighten (>1.0f) or darken (<1.0f) font output. Brightening small fonts may be a good workaround to make them more readable.\n    // [Internal]",
+        "comment": " // 1.0f     // Brighten (>1.0f) or darken (<1.0f) font output. Brightening small fonts may be a good workaround to make them more readable.",
         "name": "RasterizerMultiply",
         "type": "float"
       },
       {
-        "comment": " // Name (strictly to ease debugging)",
+        "comment": "\n    // [Internal] // Name (strictly to ease debugging)",
         "name": "Name[40]",
         "size": 40,
         "type": "char"
@@ -2465,7 +2465,7 @@
     ],
     "ImGuiIO": [
       {
-        "comment": " // = 0              // See ImGuiConfigFlags_ enum. Set by user/application. Gamepad/keyboard navigation options, etc.",
+        "comment": "\n    //------------------------------------------------------------------\n\n    // Configuration (fill once)                // Default value\n\n    //------------------------------------------------------------------ // = 0              // See ImGuiConfigFlags_ enum. Set by user/application. Gamepad/keyboard navigation options, etc.",
         "name": "ConfigFlags",
         "type": "ImGuiConfigFlags"
       },
@@ -2556,12 +2556,12 @@
         "type": "ImFont*"
       },
       {
-        "comment": " // = (1, 1)         // For retina display or other situations where window coordinates are different from framebuffer coordinates. This generally ends up in ImDrawData::FramebufferScale.\n    // Miscellaneous options",
+        "comment": " // = (1, 1)         // For retina display or other situations where window coordinates are different from framebuffer coordinates. This generally ends up in ImDrawData::FramebufferScale.",
         "name": "DisplayFramebufferScale",
         "type": "ImVec2"
       },
       {
-        "comment": " // = false          // Request ImGui to draw a mouse cursor for you (if you are on a platform without a mouse cursor). Cannot be easily renamed to 'io.ConfigXXX' because this is frequently used by back-end implementations.",
+        "comment": "\n    // Miscellaneous options // = false          // Request ImGui to draw a mouse cursor for you (if you are on a platform without a mouse cursor). Cannot be easily renamed to 'io.ConfigXXX' because this is frequently used by back-end implementations.",
         "name": "MouseDrawCursor",
         "type": "bool"
       },
@@ -2581,12 +2581,12 @@
         "type": "bool"
       },
       {
-        "comment": " // = false       // [BETA] Set to true to only allow moving windows when clicked+dragged from the title bar. Windows without a title bar are not affected.\n    //------------------------------------------------------------------\n    // Platform Functions\n    // (the imgui_impl_xxxx back-end files are setting those up for you)\n    //------------------------------------------------------------------\n    // Optional: Platform/Renderer back-end name (informational only! will be displayed in About Window) + User data for back-end/wrappers to store their own stuff.",
+        "comment": " // = false       // [BETA] Set to true to only allow moving windows when clicked+dragged from the title bar. Windows without a title bar are not affected.",
         "name": "ConfigWindowsMoveFromTitleBarOnly",
         "type": "bool"
       },
       {
-        "comment": " // = NULL",
+        "comment": "\n    //------------------------------------------------------------------\n\n    // Platform Functions\n\n    // (the imgui_impl_xxxx back-end files are setting those up for you)\n\n    //------------------------------------------------------------------\n\n    // Optional: Platform/Renderer back-end name (informational only! will be displayed in About Window) + User data for back-end/wrappers to store their own stuff. // = NULL",
         "name": "BackendPlatformName",
         "type": "const char*"
       },
@@ -2606,12 +2606,12 @@
         "type": "void*"
       },
       {
-        "comment": " // = NULL\n    // Optional: Access OS clipboard\n    // (default to use native Win32 clipboard on Windows, otherwise uses a private clipboard. Override to access OS clipboard on other architectures)",
+        "comment": " // = NULL",
         "name": "BackendLanguageUserData",
         "type": "void*"
       },
       {
-        "comment": "",
+        "comment": "\n    // Optional: Access OS clipboard\n\n    // (default to use native Win32 clipboard on Windows, otherwise uses a private clipboard. Override to access OS clipboard on other architectures)",
         "name": "GetClipboardTextFn",
         "type": "const char*(*)(void* user_data)"
       },
@@ -2621,27 +2621,27 @@
         "type": "void(*)(void* user_data,const char* text)"
       },
       {
-        "comment": "\n    // Optional: Notify OS Input Method Editor of the screen position of your cursor for text input position (e.g. when using Japanese/Chinese IME on Windows)\n    // (default to use native imm32 api on Windows)",
+        "comment": "",
         "name": "ClipboardUserData",
         "type": "void*"
       },
       {
-        "comment": "",
+        "comment": "\n    // Optional: Notify OS Input Method Editor of the screen position of your cursor for text input position (e.g. when using Japanese/Chinese IME on Windows)\n\n    // (default to use native imm32 api on Windows)",
         "name": "ImeSetInputScreenPosFn",
         "type": "void(*)(int x,int y)"
       },
       {
-        "comment": " // = NULL           // (Windows) Set this to your HWND to get automatic IME cursor positioning.\n    // This is only here to keep ImGuiIO the same size/layout, so that IMGUI_DISABLE_OBSOLETE_FUNCTIONS can exceptionally be used outside of imconfig.h.",
+        "comment": " // = NULL           // (Windows) Set this to your HWND to get automatic IME cursor positioning.",
         "name": "ImeWindowHandle",
         "type": "void*"
       },
       {
-        "comment": "\n    //------------------------------------------------------------------\n    // Input - Fill before calling NewFrame()\n    //------------------------------------------------------------------",
+        "comment": "\n    // This is only here to keep ImGuiIO the same size/layout, so that IMGUI_DISABLE_OBSOLETE_FUNCTIONS can exceptionally be used outside of imconfig.h.",
         "name": "RenderDrawListsFnUnused",
         "type": "void*"
       },
       {
-        "comment": " // Mouse position, in pixels. Set to ImVec2(-FLT_MAX,-FLT_MAX) if mouse is unavailable (on another screen, etc.)",
+        "comment": "\n    //------------------------------------------------------------------\n\n    // Input - Fill before calling NewFrame()\n\n    //------------------------------------------------------------------ // Mouse position, in pixels. Set to ImVec2(-FLT_MAX,-FLT_MAX) if mouse is unavailable (on another screen, etc.)",
         "name": "MousePos",
         "type": "ImVec2"
       },
@@ -2688,13 +2688,13 @@
         "type": "bool"
       },
       {
-        "comment": " // Gamepad inputs. Cleared back to zero by EndFrame(). Keyboard keys will be auto-mapped and be written here by NewFrame().\n    // Functions",
+        "comment": " // Gamepad inputs. Cleared back to zero by EndFrame(). Keyboard keys will be auto-mapped and be written here by NewFrame().",
         "name": "NavInputs[ImGuiNavInput_COUNT]",
         "size": 22,
         "type": "float"
       },
       {
-        "comment": " // When io.WantCaptureMouse is true, imgui will use the mouse inputs, do not dispatch them to your main game/application (in both cases, always pass on mouse inputs to imgui). (e.g. unclicked mouse is hovering over an imgui window, widget is active, mouse was clicked over an imgui window, etc.).",
+        "comment": "\n    //------------------------------------------------------------------\n\n    // Output - Retrieve after calling NewFrame()\n\n    //------------------------------------------------------------------ // When io.WantCaptureMouse is true, imgui will use the mouse inputs, do not dispatch them to your main game/application (in both cases, always pass on mouse inputs to imgui). (e.g. unclicked mouse is hovering over an imgui window, widget is active, mouse was clicked over an imgui window, etc.).",
         "name": "WantCaptureMouse",
         "type": "bool"
       },
@@ -2759,12 +2759,12 @@
         "type": "int"
       },
       {
-        "comment": " // Mouse delta. Note that this is zero if either current or previous position are invalid (-FLT_MAX,-FLT_MAX), so a disappearing/reappearing mouse won't have a huge delta.\n    //------------------------------------------------------------------\n    // [Internal] ImGui will maintain those fields. Forward compatibility not guaranteed!\n    //------------------------------------------------------------------",
+        "comment": " // Mouse delta. Note that this is zero if either current or previous position are invalid (-FLT_MAX,-FLT_MAX), so a disappearing/reappearing mouse won't have a huge delta.",
         "name": "MouseDelta",
         "type": "ImVec2"
       },
       {
-        "comment": " // Previous mouse position (note that MouseDelta is not necessary == MousePos-MousePosPrev, in case either position is invalid)",
+        "comment": "\n    //------------------------------------------------------------------\n\n    // [Internal] ImGui will maintain those fields. Forward compatibility not guaranteed!\n\n    //------------------------------------------------------------------ // Previous mouse position (note that MouseDelta is not necessary == MousePos-MousePosPrev, in case either position is invalid)",
         "name": "MousePosPrev",
         "type": "ImVec2"
       },
@@ -2877,12 +2877,12 @@
         "type": "ImGuiInputTextFlags"
       },
       {
-        "comment": " // What user passed to InputText()      // Read-only\n    // Arguments for the different callback events\n    // - To modify the text buffer in a callback, prefer using the InsertChars() / DeleteChars() function. InsertChars() will take care of calling the resize callback if necessary.\n    // - If you know your edits are not going to resize the underlying buffer allocation, you may modify the contents of 'Buf[]' directly. You need to update 'BufTextLen' accordingly (0 <= BufTextLen < BufSize) and set 'BufDirty'' to true so InputText can update its internal state.",
+        "comment": " // What user passed to InputText()      // Read-only",
         "name": "UserData",
         "type": "void*"
       },
       {
-        "comment": " // Character input                      // Read-write   // [CharFilter] Replace character with another one, or set to zero to drop. return 1 is equivalent to setting EventChar=0;",
+        "comment": "\n    // Arguments for the different callback events\n\n    // - To modify the text buffer in a callback, prefer using the InsertChars() / DeleteChars() function. InsertChars() will take care of calling the resize callback if necessary.\n\n    // - If you know your edits are not going to resize the underlying buffer allocation, you may modify the contents of 'Buf[]' directly. You need to update 'BufTextLen' accordingly (0 <= BufTextLen < BufSize) and set 'BufDirty'' to true so InputText can update its internal state. // Character input                      // Read-write   // [CharFilter] Replace character with another one, or set to zero to drop. return 1 is equivalent to setting EventChar=0;",
         "name": "EventChar",
         "type": "ImWchar"
       },
@@ -2922,7 +2922,7 @@
         "type": "int"
       },
       {
-        "comment": " //                                      // Read-write   // [Completion,History,Always]\n    // Helper functions for text manipulation.\n    // Use those function to benefit from the CallbackResize behaviors. Calling those function reset the selection.",
+        "comment": " //                                      // Read-write   // [Completion,History,Always]",
         "name": "SelectionEnd",
         "type": "int"
       }
@@ -2939,22 +2939,22 @@
         "type": "float"
       },
       {
-        "comment": "\n    // items_count:  Use -1 to ignore (you can call Begin later). Use INT_MAX if you don't know how many items you have (in which case the cursor won't be advanced in the final step).\n    // items_height: Use -1.0f to be calculated automatically on first step. Otherwise pass in the distance between your items, typically GetTextLineHeightWithSpacing() or GetFrameHeightWithSpacing().\n    // If you don't specify an items_height, you NEED to call Step(). If you specify items_height you may call the old Begin()/End() api directly, but prefer calling Step().",
+        "comment": "",
         "name": "ItemsCount",
         "type": "int"
       },
       {
-        "comment": "\n    // items_count:  Use -1 to ignore (you can call Begin later). Use INT_MAX if you don't know how many items you have (in which case the cursor won't be advanced in the final step).\n    // items_height: Use -1.0f to be calculated automatically on first step. Otherwise pass in the distance between your items, typically GetTextLineHeightWithSpacing() or GetFrameHeightWithSpacing().\n    // If you don't specify an items_height, you NEED to call Step(). If you specify items_height you may call the old Begin()/End() api directly, but prefer calling Step().",
+        "comment": "",
         "name": "StepNo",
         "type": "int"
       },
       {
-        "comment": "\n    // items_count:  Use -1 to ignore (you can call Begin later). Use INT_MAX if you don't know how many items you have (in which case the cursor won't be advanced in the final step).\n    // items_height: Use -1.0f to be calculated automatically on first step. Otherwise pass in the distance between your items, typically GetTextLineHeightWithSpacing() or GetFrameHeightWithSpacing().\n    // If you don't specify an items_height, you NEED to call Step(). If you specify items_height you may call the old Begin()/End() api directly, but prefer calling Step().",
+        "comment": "",
         "name": "DisplayStart",
         "type": "int"
       },
       {
-        "comment": "\n    // items_count:  Use -1 to ignore (you can call Begin later). Use INT_MAX if you don't know how many items you have (in which case the cursor won't be advanced in the final step).\n    // items_height: Use -1.0f to be calculated automatically on first step. Otherwise pass in the distance between your items, typically GetTextLineHeightWithSpacing() or GetFrameHeightWithSpacing().\n    // If you don't specify an items_height, you NEED to call Step(). If you specify items_height you may call the old Begin()/End() api directly, but prefer calling Step().",
+        "comment": "",
         "name": "DisplayEnd",
         "type": "int"
       }
@@ -2968,17 +2968,17 @@
     ],
     "ImGuiPayload": [
       {
-        "comment": " // Data (copied and owned by dear imgui)",
+        "comment": "\n    // Members // Data (copied and owned by dear imgui)",
         "name": "Data",
         "type": "void*"
       },
       {
-        "comment": " // Data size\n    // [Internal]",
+        "comment": " // Data size",
         "name": "DataSize",
         "type": "int"
       },
       {
-        "comment": " // Source item id",
+        "comment": "\n    // [Internal] // Source item id",
         "name": "SourceId",
         "type": "ImGuiID"
       },
@@ -3033,7 +3033,7 @@
     ],
     "ImGuiStorage": [
       {
-        "comment": "\n    // - Get***() functions find pair, never add/allocate. Pairs are sorted so a query is O(log N)\n    // - Set***() functions find pair, insertion on demand if missing.\n    // - Sorted insertion is costly, paid once. A typical frame shouldn't need to insert any new pair.",
+        "comment": "",
         "name": "Data",
         "template_type": "Pair",
         "type": "ImVector_Pair"

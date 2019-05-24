@@ -222,11 +222,14 @@ local function parseItems(txt,dumpit)
 				local inercoms
 				item = txt:sub(i,e)
 				if re_name=="comment_re" or re_name=="comment2_re" then
-					table.insert(outercomms,item)
-					-- comments to previous item
-					if itemarr[#itemarr] then 
-						local prev = itemarr[#itemarr].comments or ""
-						itemarr[#itemarr].comments = prev .. item 
+					if item:match("^%s*\n") then
+						table.insert(outercomms,item)
+					else
+						-- comments to previous item
+						if itemarr[#itemarr] then 
+							local prev = itemarr[#itemarr].comments or ""
+							itemarr[#itemarr].comments = prev .. item 
+						end
 					end
 				else
 					--item,inercoms = clean_comments(item)
@@ -234,7 +237,7 @@ local function parseItems(txt,dumpit)
 					local comments = table.concat(outercomms,"\n") --..inercoms
 					if comments=="" then comments=nil end
 					outercomms = {}
-					table.insert(itemarr,{re_name=re_name,item=item})--,comments=comments})
+					table.insert(itemarr,{re_name=re_name,item=item,comments=comments})
 					items[re_name] = items[re_name] or {}
 					table.insert(items[re_name],item)
 				end

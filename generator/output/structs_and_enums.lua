@@ -1659,13 +1659,13 @@ defs["structs"]["ImDrawData"][7]["comment"] = " // Size of the viewport to rende
 defs["structs"]["ImDrawData"][7]["name"] = "DisplaySize"
 defs["structs"]["ImDrawData"][7]["type"] = "ImVec2"
 defs["structs"]["ImDrawData"][8] = {}
-defs["structs"]["ImDrawData"][8]["comment"] = " // Amount of pixels for each unit of DisplaySize. Based on io.DisplayFramebufferScale. Generally (1,1) on normal display, (2,2) on OSX with Retina display.\
-    // Functions"
+defs["structs"]["ImDrawData"][8]["comment"] = " // Amount of pixels for each unit of DisplaySize. Based on io.DisplayFramebufferScale. Generally (1,1) on normal display, (2,2) on OSX with Retina display."
 defs["structs"]["ImDrawData"][8]["name"] = "FramebufferScale"
 defs["structs"]["ImDrawData"][8]["type"] = "ImVec2"
 defs["structs"]["ImDrawList"] = {}
 defs["structs"]["ImDrawList"][1] = {}
-defs["structs"]["ImDrawList"][1]["comment"] = " // Draw commands. Typically 1 command = 1 GPU draw call, unless the command is a callback."
+defs["structs"]["ImDrawList"][1]["comment"] = "\
+    // This is what you have to render // Draw commands. Typically 1 command = 1 GPU draw call, unless the command is a callback."
 defs["structs"]["ImDrawList"][1]["name"] = "CmdBuffer"
 defs["structs"]["ImDrawList"][1]["template_type"] = "ImDrawCmd"
 defs["structs"]["ImDrawList"][1]["type"] = "ImVector_ImDrawCmd"
@@ -1680,12 +1680,12 @@ defs["structs"]["ImDrawList"][3]["name"] = "VtxBuffer"
 defs["structs"]["ImDrawList"][3]["template_type"] = "ImDrawVert"
 defs["structs"]["ImDrawList"][3]["type"] = "ImVector_ImDrawVert"
 defs["structs"]["ImDrawList"][4] = {}
-defs["structs"]["ImDrawList"][4]["comment"] = " // Flags, you may poke into these to adjust anti-aliasing settings per-primitive.\
-    // [Internal, used while building lists]"
+defs["structs"]["ImDrawList"][4]["comment"] = " // Flags, you may poke into these to adjust anti-aliasing settings per-primitive."
 defs["structs"]["ImDrawList"][4]["name"] = "Flags"
 defs["structs"]["ImDrawList"][4]["type"] = "ImDrawListFlags"
 defs["structs"]["ImDrawList"][5] = {}
-defs["structs"]["ImDrawList"][5]["comment"] = " // Pointer to shared draw data (you can use ImGui::GetDrawListSharedData() to get the one from current ImGui context)"
+defs["structs"]["ImDrawList"][5]["comment"] = "\
+    // [Internal, used while building lists] // Pointer to shared draw data (you can use ImGui::GetDrawListSharedData() to get the one from current ImGui context)"
 defs["structs"]["ImDrawList"][5]["name"] = "_Data"
 defs["structs"]["ImDrawList"][5]["type"] = "const ImDrawListSharedData*"
 defs["structs"]["ImDrawList"][6] = {}
@@ -1728,8 +1728,7 @@ defs["structs"]["ImDrawList"][14]["comment"] = " // [Internal] number of active 
 defs["structs"]["ImDrawList"][14]["name"] = "_ChannelsCount"
 defs["structs"]["ImDrawList"][14]["type"] = "int"
 defs["structs"]["ImDrawList"][15] = {}
-defs["structs"]["ImDrawList"][15]["comment"] = " // [Internal] draw channels for columns API (not resized down so _ChannelsCount may be smaller than _Channels.Size)\
-    // If you want to create ImDrawList instances, pass them ImGui::GetDrawListSharedData() or create and use your own ImDrawListSharedData (so you can use ImDrawList without ImGui)"
+defs["structs"]["ImDrawList"][15]["comment"] = " // [Internal] draw channels for columns API (not resized down so _ChannelsCount may be smaller than _Channels.Size)"
 defs["structs"]["ImDrawList"][15]["name"] = "_Channels"
 defs["structs"]["ImDrawList"][15]["template_type"] = "ImDrawChannel"
 defs["structs"]["ImDrawList"][15]["type"] = "ImVector_ImDrawChannel"
@@ -1748,7 +1747,8 @@ defs["structs"]["ImDrawVert"][3]["name"] = "col"
 defs["structs"]["ImDrawVert"][3]["type"] = "ImU32"
 defs["structs"]["ImFont"] = {}
 defs["structs"]["ImFont"][1] = {}
-defs["structs"]["ImFont"][1]["comment"] = " // 12-16 // out //            // Sparse. Glyphs->AdvanceX in a directly indexable way (cache-friendly for CalcTextSize functions which only this this info, and are often bottleneck in large UI)."
+defs["structs"]["ImFont"][1]["comment"] = "\
+    // Members: Hot ~20/24 bytes (for CalcTextSize) // 12-16 // out //            // Sparse. Glyphs->AdvanceX in a directly indexable way (cache-friendly for CalcTextSize functions which only this this info, and are often bottleneck in large UI)."
 defs["structs"]["ImFont"][1]["name"] = "IndexAdvanceX"
 defs["structs"]["ImFont"][1]["template_type"] = "float"
 defs["structs"]["ImFont"][1]["type"] = "ImVector_float"
@@ -1757,12 +1757,12 @@ defs["structs"]["ImFont"][2]["comment"] = " // 4     // out // = FallbackGlyph->
 defs["structs"]["ImFont"][2]["name"] = "FallbackAdvanceX"
 defs["structs"]["ImFont"][2]["type"] = "float"
 defs["structs"]["ImFont"][3] = {}
-defs["structs"]["ImFont"][3]["comment"] = " // 4     // in  //            // Height of characters/line, set during loading (don't change after loading)\
-    // Members: Hot ~36/48 bytes (for CalcTextSize + render loop)"
+defs["structs"]["ImFont"][3]["comment"] = " // 4     // in  //            // Height of characters/line, set during loading (don't change after loading)"
 defs["structs"]["ImFont"][3]["name"] = "FontSize"
 defs["structs"]["ImFont"][3]["type"] = "float"
 defs["structs"]["ImFont"][4] = {}
-defs["structs"]["ImFont"][4]["comment"] = " // 12-16 // out //            // Sparse. Index glyphs by Unicode code-point."
+defs["structs"]["ImFont"][4]["comment"] = "\
+    // Members: Hot ~36/48 bytes (for CalcTextSize + render loop) // 12-16 // out //            // Sparse. Index glyphs by Unicode code-point."
 defs["structs"]["ImFont"][4]["name"] = "IndexLookup"
 defs["structs"]["ImFont"][4]["template_type"] = "ImWchar"
 defs["structs"]["ImFont"][4]["type"] = "ImVector_ImWchar"
@@ -1776,12 +1776,12 @@ defs["structs"]["ImFont"][6]["comment"] = " // 4-8   // out // = FindGlyph(FontF
 defs["structs"]["ImFont"][6]["name"] = "FallbackGlyph"
 defs["structs"]["ImFont"][6]["type"] = "const ImFontGlyph*"
 defs["structs"]["ImFont"][7] = {}
-defs["structs"]["ImFont"][7]["comment"] = " // 8     // in  // = (0,0)    // Offset font rendering by xx pixels\
-    // Members: Cold ~32/40 bytes"
+defs["structs"]["ImFont"][7]["comment"] = " // 8     // in  // = (0,0)    // Offset font rendering by xx pixels"
 defs["structs"]["ImFont"][7]["name"] = "DisplayOffset"
 defs["structs"]["ImFont"][7]["type"] = "ImVec2"
 defs["structs"]["ImFont"][8] = {}
-defs["structs"]["ImFont"][8]["comment"] = " // 4-8   // out //            // What we has been loaded into"
+defs["structs"]["ImFont"][8]["comment"] = "\
+    // Members: Cold ~32/40 bytes // 4-8   // out //            // What we has been loaded into"
 defs["structs"]["ImFont"][8]["name"] = "ContainerAtlas"
 defs["structs"]["ImFont"][8]["type"] = "ImFontAtlas*"
 defs["structs"]["ImFont"][9] = {}
@@ -1813,13 +1813,17 @@ defs["structs"]["ImFont"][15]["comment"] = "// 4     // out //            // Tot
 defs["structs"]["ImFont"][15]["name"] = "MetricsTotalSurface"
 defs["structs"]["ImFont"][15]["type"] = "int"
 defs["structs"]["ImFont"][16] = {}
-defs["structs"]["ImFont"][16]["comment"] = " // 1     // out //\
-    // Methods"
+defs["structs"]["ImFont"][16]["comment"] = " // 1     // out //"
 defs["structs"]["ImFont"][16]["name"] = "DirtyLookupTables"
 defs["structs"]["ImFont"][16]["type"] = "bool"
 defs["structs"]["ImFontAtlas"] = {}
 defs["structs"]["ImFontAtlas"][1] = {}
-defs["structs"]["ImFontAtlas"][1]["comment"] = " // Marked as Locked by ImGui::NewFrame() so attempt to modify the atlas will assert."
+defs["structs"]["ImFontAtlas"][1]["comment"] = "\
+    //-------------------------------------------\
+\
+    // Members\
+\
+    //------------------------------------------- // Marked as Locked by ImGui::NewFrame() so attempt to modify the atlas will assert."
 defs["structs"]["ImFontAtlas"][1]["name"] = "Locked"
 defs["structs"]["ImFontAtlas"][1]["type"] = "bool"
 defs["structs"]["ImFontAtlas"][2] = {}
@@ -1835,13 +1839,14 @@ defs["structs"]["ImFontAtlas"][4]["comment"] = " // Texture width desired by use
 defs["structs"]["ImFontAtlas"][4]["name"] = "TexDesiredWidth"
 defs["structs"]["ImFontAtlas"][4]["type"] = "int"
 defs["structs"]["ImFontAtlas"][5] = {}
-defs["structs"]["ImFontAtlas"][5]["comment"] = " // Padding between glyphs within texture in pixels. Defaults to 1. If your rendering method doesn't rely on bilinear filtering you may set this to 0.\
-    // [Internal]\
-    // NB: Access texture data via GetTexData*() calls! Which will setup a default font for you."
+defs["structs"]["ImFontAtlas"][5]["comment"] = " // Padding between glyphs within texture in pixels. Defaults to 1. If your rendering method doesn't rely on bilinear filtering you may set this to 0."
 defs["structs"]["ImFontAtlas"][5]["name"] = "TexGlyphPadding"
 defs["structs"]["ImFontAtlas"][5]["type"] = "int"
 defs["structs"]["ImFontAtlas"][6] = {}
-defs["structs"]["ImFontAtlas"][6]["comment"] = " // 1 component per pixel, each component is unsigned 8-bit. Total size = TexWidth * TexHeight"
+defs["structs"]["ImFontAtlas"][6]["comment"] = "\
+    // [Internal]\
+\
+    // NB: Access texture data via GetTexData*() calls! Which will setup a default font for you. // 1 component per pixel, each component is unsigned 8-bit. Total size = TexWidth * TexHeight"
 defs["structs"]["ImFontAtlas"][6]["name"] = "TexPixelsAlpha8"
 defs["structs"]["ImFontAtlas"][6]["type"] = "unsigned char*"
 defs["structs"]["ImFontAtlas"][7] = {}
@@ -1946,12 +1951,12 @@ defs["structs"]["ImFontConfig"][15]["comment"] = " // 0x00     // Settings for c
 defs["structs"]["ImFontConfig"][15]["name"] = "RasterizerFlags"
 defs["structs"]["ImFontConfig"][15]["type"] = "unsigned int"
 defs["structs"]["ImFontConfig"][16] = {}
-defs["structs"]["ImFontConfig"][16]["comment"] = " // 1.0f     // Brighten (>1.0f) or darken (<1.0f) font output. Brightening small fonts may be a good workaround to make them more readable.\
-    // [Internal]"
+defs["structs"]["ImFontConfig"][16]["comment"] = " // 1.0f     // Brighten (>1.0f) or darken (<1.0f) font output. Brightening small fonts may be a good workaround to make them more readable."
 defs["structs"]["ImFontConfig"][16]["name"] = "RasterizerMultiply"
 defs["structs"]["ImFontConfig"][16]["type"] = "float"
 defs["structs"]["ImFontConfig"][17] = {}
-defs["structs"]["ImFontConfig"][17]["comment"] = " // Name (strictly to ease debugging)"
+defs["structs"]["ImFontConfig"][17]["comment"] = "\
+    // [Internal] // Name (strictly to ease debugging)"
 defs["structs"]["ImFontConfig"][17]["name"] = "Name[40]"
 defs["structs"]["ImFontConfig"][17]["size"] = 40
 defs["structs"]["ImFontConfig"][17]["type"] = "char"
@@ -2008,7 +2013,12 @@ defs["structs"]["ImFontGlyphRangesBuilder"][1]["template_type"] = "int"
 defs["structs"]["ImFontGlyphRangesBuilder"][1]["type"] = "ImVector_int"
 defs["structs"]["ImGuiIO"] = {}
 defs["structs"]["ImGuiIO"][1] = {}
-defs["structs"]["ImGuiIO"][1]["comment"] = " // = 0              // See ImGuiConfigFlags_ enum. Set by user/application. Gamepad/keyboard navigation options, etc."
+defs["structs"]["ImGuiIO"][1]["comment"] = "\
+    //------------------------------------------------------------------\
+\
+    // Configuration (fill once)                // Default value\
+\
+    //------------------------------------------------------------------ // = 0              // See ImGuiConfigFlags_ enum. Set by user/application. Gamepad/keyboard navigation options, etc."
 defs["structs"]["ImGuiIO"][1]["name"] = "ConfigFlags"
 defs["structs"]["ImGuiIO"][1]["type"] = "ImGuiConfigFlags"
 defs["structs"]["ImGuiIO"][2] = {}
@@ -2081,12 +2091,12 @@ defs["structs"]["ImGuiIO"][18]["comment"] = " // = NULL           // Font to use
 defs["structs"]["ImGuiIO"][18]["name"] = "FontDefault"
 defs["structs"]["ImGuiIO"][18]["type"] = "ImFont*"
 defs["structs"]["ImGuiIO"][19] = {}
-defs["structs"]["ImGuiIO"][19]["comment"] = " // = (1, 1)         // For retina display or other situations where window coordinates are different from framebuffer coordinates. This generally ends up in ImDrawData::FramebufferScale.\
-    // Miscellaneous options"
+defs["structs"]["ImGuiIO"][19]["comment"] = " // = (1, 1)         // For retina display or other situations where window coordinates are different from framebuffer coordinates. This generally ends up in ImDrawData::FramebufferScale."
 defs["structs"]["ImGuiIO"][19]["name"] = "DisplayFramebufferScale"
 defs["structs"]["ImGuiIO"][19]["type"] = "ImVec2"
 defs["structs"]["ImGuiIO"][20] = {}
-defs["structs"]["ImGuiIO"][20]["comment"] = " // = false          // Request ImGui to draw a mouse cursor for you (if you are on a platform without a mouse cursor). Cannot be easily renamed to 'io.ConfigXXX' because this is frequently used by back-end implementations."
+defs["structs"]["ImGuiIO"][20]["comment"] = "\
+    // Miscellaneous options // = false          // Request ImGui to draw a mouse cursor for you (if you are on a platform without a mouse cursor). Cannot be easily renamed to 'io.ConfigXXX' because this is frequently used by back-end implementations."
 defs["structs"]["ImGuiIO"][20]["name"] = "MouseDrawCursor"
 defs["structs"]["ImGuiIO"][20]["type"] = "bool"
 defs["structs"]["ImGuiIO"][21] = {}
@@ -2102,16 +2112,20 @@ defs["structs"]["ImGuiIO"][23]["comment"] = " // = true           // Enable resi
 defs["structs"]["ImGuiIO"][23]["name"] = "ConfigWindowsResizeFromEdges"
 defs["structs"]["ImGuiIO"][23]["type"] = "bool"
 defs["structs"]["ImGuiIO"][24] = {}
-defs["structs"]["ImGuiIO"][24]["comment"] = " // = false       // [BETA] Set to true to only allow moving windows when clicked+dragged from the title bar. Windows without a title bar are not affected.\
-    //------------------------------------------------------------------\
-    // Platform Functions\
-    // (the imgui_impl_xxxx back-end files are setting those up for you)\
-    //------------------------------------------------------------------\
-    // Optional: Platform/Renderer back-end name (informational only! will be displayed in About Window) + User data for back-end/wrappers to store their own stuff."
+defs["structs"]["ImGuiIO"][24]["comment"] = " // = false       // [BETA] Set to true to only allow moving windows when clicked+dragged from the title bar. Windows without a title bar are not affected."
 defs["structs"]["ImGuiIO"][24]["name"] = "ConfigWindowsMoveFromTitleBarOnly"
 defs["structs"]["ImGuiIO"][24]["type"] = "bool"
 defs["structs"]["ImGuiIO"][25] = {}
-defs["structs"]["ImGuiIO"][25]["comment"] = " // = NULL"
+defs["structs"]["ImGuiIO"][25]["comment"] = "\
+    //------------------------------------------------------------------\
+\
+    // Platform Functions\
+\
+    // (the imgui_impl_xxxx back-end files are setting those up for you)\
+\
+    //------------------------------------------------------------------\
+\
+    // Optional: Platform/Renderer back-end name (informational only! will be displayed in About Window) + User data for back-end/wrappers to store their own stuff. // = NULL"
 defs["structs"]["ImGuiIO"][25]["name"] = "BackendPlatformName"
 defs["structs"]["ImGuiIO"][25]["type"] = "const char*"
 defs["structs"]["ImGuiIO"][26] = {}
@@ -2127,13 +2141,14 @@ defs["structs"]["ImGuiIO"][28]["comment"] = " // = NULL"
 defs["structs"]["ImGuiIO"][28]["name"] = "BackendRendererUserData"
 defs["structs"]["ImGuiIO"][28]["type"] = "void*"
 defs["structs"]["ImGuiIO"][29] = {}
-defs["structs"]["ImGuiIO"][29]["comment"] = " // = NULL\
-    // Optional: Access OS clipboard\
-    // (default to use native Win32 clipboard on Windows, otherwise uses a private clipboard. Override to access OS clipboard on other architectures)"
+defs["structs"]["ImGuiIO"][29]["comment"] = " // = NULL"
 defs["structs"]["ImGuiIO"][29]["name"] = "BackendLanguageUserData"
 defs["structs"]["ImGuiIO"][29]["type"] = "void*"
 defs["structs"]["ImGuiIO"][30] = {}
-defs["structs"]["ImGuiIO"][30]["comment"] = ""
+defs["structs"]["ImGuiIO"][30]["comment"] = "\
+    // Optional: Access OS clipboard\
+\
+    // (default to use native Win32 clipboard on Windows, otherwise uses a private clipboard. Override to access OS clipboard on other architectures)"
 defs["structs"]["ImGuiIO"][30]["name"] = "GetClipboardTextFn"
 defs["structs"]["ImGuiIO"][30]["type"] = "const char*(*)(void* user_data)"
 defs["structs"]["ImGuiIO"][31] = {}
@@ -2141,29 +2156,32 @@ defs["structs"]["ImGuiIO"][31]["comment"] = ""
 defs["structs"]["ImGuiIO"][31]["name"] = "SetClipboardTextFn"
 defs["structs"]["ImGuiIO"][31]["type"] = "void(*)(void* user_data,const char* text)"
 defs["structs"]["ImGuiIO"][32] = {}
-defs["structs"]["ImGuiIO"][32]["comment"] = "\
-    // Optional: Notify OS Input Method Editor of the screen position of your cursor for text input position (e.g. when using Japanese/Chinese IME on Windows)\
-    // (default to use native imm32 api on Windows)"
+defs["structs"]["ImGuiIO"][32]["comment"] = ""
 defs["structs"]["ImGuiIO"][32]["name"] = "ClipboardUserData"
 defs["structs"]["ImGuiIO"][32]["type"] = "void*"
 defs["structs"]["ImGuiIO"][33] = {}
-defs["structs"]["ImGuiIO"][33]["comment"] = ""
+defs["structs"]["ImGuiIO"][33]["comment"] = "\
+    // Optional: Notify OS Input Method Editor of the screen position of your cursor for text input position (e.g. when using Japanese/Chinese IME on Windows)\
+\
+    // (default to use native imm32 api on Windows)"
 defs["structs"]["ImGuiIO"][33]["name"] = "ImeSetInputScreenPosFn"
 defs["structs"]["ImGuiIO"][33]["type"] = "void(*)(int x,int y)"
 defs["structs"]["ImGuiIO"][34] = {}
-defs["structs"]["ImGuiIO"][34]["comment"] = " // = NULL           // (Windows) Set this to your HWND to get automatic IME cursor positioning.\
-    // This is only here to keep ImGuiIO the same size/layout, so that IMGUI_DISABLE_OBSOLETE_FUNCTIONS can exceptionally be used outside of imconfig.h."
+defs["structs"]["ImGuiIO"][34]["comment"] = " // = NULL           // (Windows) Set this to your HWND to get automatic IME cursor positioning."
 defs["structs"]["ImGuiIO"][34]["name"] = "ImeWindowHandle"
 defs["structs"]["ImGuiIO"][34]["type"] = "void*"
 defs["structs"]["ImGuiIO"][35] = {}
 defs["structs"]["ImGuiIO"][35]["comment"] = "\
-    //------------------------------------------------------------------\
-    // Input - Fill before calling NewFrame()\
-    //------------------------------------------------------------------"
+    // This is only here to keep ImGuiIO the same size/layout, so that IMGUI_DISABLE_OBSOLETE_FUNCTIONS can exceptionally be used outside of imconfig.h."
 defs["structs"]["ImGuiIO"][35]["name"] = "RenderDrawListsFnUnused"
 defs["structs"]["ImGuiIO"][35]["type"] = "void*"
 defs["structs"]["ImGuiIO"][36] = {}
-defs["structs"]["ImGuiIO"][36]["comment"] = " // Mouse position, in pixels. Set to ImVec2(-FLT_MAX,-FLT_MAX) if mouse is unavailable (on another screen, etc.)"
+defs["structs"]["ImGuiIO"][36]["comment"] = "\
+    //------------------------------------------------------------------\
+\
+    // Input - Fill before calling NewFrame()\
+\
+    //------------------------------------------------------------------ // Mouse position, in pixels. Set to ImVec2(-FLT_MAX,-FLT_MAX) if mouse is unavailable (on another screen, etc.)"
 defs["structs"]["ImGuiIO"][36]["name"] = "MousePos"
 defs["structs"]["ImGuiIO"][36]["type"] = "ImVec2"
 defs["structs"]["ImGuiIO"][37] = {}
@@ -2201,13 +2219,17 @@ defs["structs"]["ImGuiIO"][44]["name"] = "KeysDown[512]"
 defs["structs"]["ImGuiIO"][44]["size"] = 512
 defs["structs"]["ImGuiIO"][44]["type"] = "bool"
 defs["structs"]["ImGuiIO"][45] = {}
-defs["structs"]["ImGuiIO"][45]["comment"] = " // Gamepad inputs. Cleared back to zero by EndFrame(). Keyboard keys will be auto-mapped and be written here by NewFrame().\
-    // Functions"
+defs["structs"]["ImGuiIO"][45]["comment"] = " // Gamepad inputs. Cleared back to zero by EndFrame(). Keyboard keys will be auto-mapped and be written here by NewFrame()."
 defs["structs"]["ImGuiIO"][45]["name"] = "NavInputs[ImGuiNavInput_COUNT]"
 defs["structs"]["ImGuiIO"][45]["size"] = 22
 defs["structs"]["ImGuiIO"][45]["type"] = "float"
 defs["structs"]["ImGuiIO"][46] = {}
-defs["structs"]["ImGuiIO"][46]["comment"] = " // When io.WantCaptureMouse is true, imgui will use the mouse inputs, do not dispatch them to your main game/application (in both cases, always pass on mouse inputs to imgui). (e.g. unclicked mouse is hovering over an imgui window, widget is active, mouse was clicked over an imgui window, etc.)."
+defs["structs"]["ImGuiIO"][46]["comment"] = "\
+    //------------------------------------------------------------------\
+\
+    // Output - Retrieve after calling NewFrame()\
+\
+    //------------------------------------------------------------------ // When io.WantCaptureMouse is true, imgui will use the mouse inputs, do not dispatch them to your main game/application (in both cases, always pass on mouse inputs to imgui). (e.g. unclicked mouse is hovering over an imgui window, widget is active, mouse was clicked over an imgui window, etc.)."
 defs["structs"]["ImGuiIO"][46]["name"] = "WantCaptureMouse"
 defs["structs"]["ImGuiIO"][46]["type"] = "bool"
 defs["structs"]["ImGuiIO"][47] = {}
@@ -2259,14 +2281,16 @@ defs["structs"]["ImGuiIO"][58]["comment"] = " // Number of active allocations, u
 defs["structs"]["ImGuiIO"][58]["name"] = "MetricsActiveAllocations"
 defs["structs"]["ImGuiIO"][58]["type"] = "int"
 defs["structs"]["ImGuiIO"][59] = {}
-defs["structs"]["ImGuiIO"][59]["comment"] = " // Mouse delta. Note that this is zero if either current or previous position are invalid (-FLT_MAX,-FLT_MAX), so a disappearing/reappearing mouse won't have a huge delta.\
-    //------------------------------------------------------------------\
-    // [Internal] ImGui will maintain those fields. Forward compatibility not guaranteed!\
-    //------------------------------------------------------------------"
+defs["structs"]["ImGuiIO"][59]["comment"] = " // Mouse delta. Note that this is zero if either current or previous position are invalid (-FLT_MAX,-FLT_MAX), so a disappearing/reappearing mouse won't have a huge delta."
 defs["structs"]["ImGuiIO"][59]["name"] = "MouseDelta"
 defs["structs"]["ImGuiIO"][59]["type"] = "ImVec2"
 defs["structs"]["ImGuiIO"][60] = {}
-defs["structs"]["ImGuiIO"][60]["comment"] = " // Previous mouse position (note that MouseDelta is not necessary == MousePos-MousePosPrev, in case either position is invalid)"
+defs["structs"]["ImGuiIO"][60]["comment"] = "\
+    //------------------------------------------------------------------\
+\
+    // [Internal] ImGui will maintain those fields. Forward compatibility not guaranteed!\
+\
+    //------------------------------------------------------------------ // Previous mouse position (note that MouseDelta is not necessary == MousePos-MousePosPrev, in case either position is invalid)"
 defs["structs"]["ImGuiIO"][60]["name"] = "MousePosPrev"
 defs["structs"]["ImGuiIO"][60]["type"] = "ImVec2"
 defs["structs"]["ImGuiIO"][61] = {}
@@ -2359,14 +2383,16 @@ defs["structs"]["ImGuiInputTextCallbackData"][2]["comment"] = " // What user pas
 defs["structs"]["ImGuiInputTextCallbackData"][2]["name"] = "Flags"
 defs["structs"]["ImGuiInputTextCallbackData"][2]["type"] = "ImGuiInputTextFlags"
 defs["structs"]["ImGuiInputTextCallbackData"][3] = {}
-defs["structs"]["ImGuiInputTextCallbackData"][3]["comment"] = " // What user passed to InputText()      // Read-only\
-    // Arguments for the different callback events\
-    // - To modify the text buffer in a callback, prefer using the InsertChars() / DeleteChars() function. InsertChars() will take care of calling the resize callback if necessary.\
-    // - If you know your edits are not going to resize the underlying buffer allocation, you may modify the contents of 'Buf[]' directly. You need to update 'BufTextLen' accordingly (0 <= BufTextLen < BufSize) and set 'BufDirty'' to true so InputText can update its internal state."
+defs["structs"]["ImGuiInputTextCallbackData"][3]["comment"] = " // What user passed to InputText()      // Read-only"
 defs["structs"]["ImGuiInputTextCallbackData"][3]["name"] = "UserData"
 defs["structs"]["ImGuiInputTextCallbackData"][3]["type"] = "void*"
 defs["structs"]["ImGuiInputTextCallbackData"][4] = {}
-defs["structs"]["ImGuiInputTextCallbackData"][4]["comment"] = " // Character input                      // Read-write   // [CharFilter] Replace character with another one, or set to zero to drop. return 1 is equivalent to setting EventChar=0;"
+defs["structs"]["ImGuiInputTextCallbackData"][4]["comment"] = "\
+    // Arguments for the different callback events\
+\
+    // - To modify the text buffer in a callback, prefer using the InsertChars() / DeleteChars() function. InsertChars() will take care of calling the resize callback if necessary.\
+\
+    // - If you know your edits are not going to resize the underlying buffer allocation, you may modify the contents of 'Buf[]' directly. You need to update 'BufTextLen' accordingly (0 <= BufTextLen < BufSize) and set 'BufDirty'' to true so InputText can update its internal state. // Character input                      // Read-write   // [CharFilter] Replace character with another one, or set to zero to drop. return 1 is equivalent to setting EventChar=0;"
 defs["structs"]["ImGuiInputTextCallbackData"][4]["name"] = "EventChar"
 defs["structs"]["ImGuiInputTextCallbackData"][4]["type"] = "ImWchar"
 defs["structs"]["ImGuiInputTextCallbackData"][5] = {}
@@ -2398,9 +2424,7 @@ defs["structs"]["ImGuiInputTextCallbackData"][11]["comment"] = " //             
 defs["structs"]["ImGuiInputTextCallbackData"][11]["name"] = "SelectionStart"
 defs["structs"]["ImGuiInputTextCallbackData"][11]["type"] = "int"
 defs["structs"]["ImGuiInputTextCallbackData"][12] = {}
-defs["structs"]["ImGuiInputTextCallbackData"][12]["comment"] = " //                                      // Read-write   // [Completion,History,Always]\
-    // Helper functions for text manipulation.\
-    // Use those function to benefit from the CallbackResize behaviors. Calling those function reset the selection."
+defs["structs"]["ImGuiInputTextCallbackData"][12]["comment"] = " //                                      // Read-write   // [Completion,History,Always]"
 defs["structs"]["ImGuiInputTextCallbackData"][12]["name"] = "SelectionEnd"
 defs["structs"]["ImGuiInputTextCallbackData"][12]["type"] = "int"
 defs["structs"]["ImGuiListClipper"] = {}
@@ -2413,31 +2437,19 @@ defs["structs"]["ImGuiListClipper"][2]["comment"] = ""
 defs["structs"]["ImGuiListClipper"][2]["name"] = "ItemsHeight"
 defs["structs"]["ImGuiListClipper"][2]["type"] = "float"
 defs["structs"]["ImGuiListClipper"][3] = {}
-defs["structs"]["ImGuiListClipper"][3]["comment"] = "\
-    // items_count:  Use -1 to ignore (you can call Begin later). Use INT_MAX if you don't know how many items you have (in which case the cursor won't be advanced in the final step).\
-    // items_height: Use -1.0f to be calculated automatically on first step. Otherwise pass in the distance between your items, typically GetTextLineHeightWithSpacing() or GetFrameHeightWithSpacing().\
-    // If you don't specify an items_height, you NEED to call Step(). If you specify items_height you may call the old Begin()/End() api directly, but prefer calling Step()."
+defs["structs"]["ImGuiListClipper"][3]["comment"] = ""
 defs["structs"]["ImGuiListClipper"][3]["name"] = "ItemsCount"
 defs["structs"]["ImGuiListClipper"][3]["type"] = "int"
 defs["structs"]["ImGuiListClipper"][4] = {}
-defs["structs"]["ImGuiListClipper"][4]["comment"] = "\
-    // items_count:  Use -1 to ignore (you can call Begin later). Use INT_MAX if you don't know how many items you have (in which case the cursor won't be advanced in the final step).\
-    // items_height: Use -1.0f to be calculated automatically on first step. Otherwise pass in the distance between your items, typically GetTextLineHeightWithSpacing() or GetFrameHeightWithSpacing().\
-    // If you don't specify an items_height, you NEED to call Step(). If you specify items_height you may call the old Begin()/End() api directly, but prefer calling Step()."
+defs["structs"]["ImGuiListClipper"][4]["comment"] = ""
 defs["structs"]["ImGuiListClipper"][4]["name"] = "StepNo"
 defs["structs"]["ImGuiListClipper"][4]["type"] = "int"
 defs["structs"]["ImGuiListClipper"][5] = {}
-defs["structs"]["ImGuiListClipper"][5]["comment"] = "\
-    // items_count:  Use -1 to ignore (you can call Begin later). Use INT_MAX if you don't know how many items you have (in which case the cursor won't be advanced in the final step).\
-    // items_height: Use -1.0f to be calculated automatically on first step. Otherwise pass in the distance between your items, typically GetTextLineHeightWithSpacing() or GetFrameHeightWithSpacing().\
-    // If you don't specify an items_height, you NEED to call Step(). If you specify items_height you may call the old Begin()/End() api directly, but prefer calling Step()."
+defs["structs"]["ImGuiListClipper"][5]["comment"] = ""
 defs["structs"]["ImGuiListClipper"][5]["name"] = "DisplayStart"
 defs["structs"]["ImGuiListClipper"][5]["type"] = "int"
 defs["structs"]["ImGuiListClipper"][6] = {}
-defs["structs"]["ImGuiListClipper"][6]["comment"] = "\
-    // items_count:  Use -1 to ignore (you can call Begin later). Use INT_MAX if you don't know how many items you have (in which case the cursor won't be advanced in the final step).\
-    // items_height: Use -1.0f to be calculated automatically on first step. Otherwise pass in the distance between your items, typically GetTextLineHeightWithSpacing() or GetFrameHeightWithSpacing().\
-    // If you don't specify an items_height, you NEED to call Step(). If you specify items_height you may call the old Begin()/End() api directly, but prefer calling Step()."
+defs["structs"]["ImGuiListClipper"][6]["comment"] = ""
 defs["structs"]["ImGuiListClipper"][6]["name"] = "DisplayEnd"
 defs["structs"]["ImGuiListClipper"][6]["type"] = "int"
 defs["structs"]["ImGuiOnceUponAFrame"] = {}
@@ -2447,16 +2459,17 @@ defs["structs"]["ImGuiOnceUponAFrame"][1]["name"] = "RefFrame"
 defs["structs"]["ImGuiOnceUponAFrame"][1]["type"] = "int"
 defs["structs"]["ImGuiPayload"] = {}
 defs["structs"]["ImGuiPayload"][1] = {}
-defs["structs"]["ImGuiPayload"][1]["comment"] = " // Data (copied and owned by dear imgui)"
+defs["structs"]["ImGuiPayload"][1]["comment"] = "\
+    // Members // Data (copied and owned by dear imgui)"
 defs["structs"]["ImGuiPayload"][1]["name"] = "Data"
 defs["structs"]["ImGuiPayload"][1]["type"] = "void*"
 defs["structs"]["ImGuiPayload"][2] = {}
-defs["structs"]["ImGuiPayload"][2]["comment"] = " // Data size\
-    // [Internal]"
+defs["structs"]["ImGuiPayload"][2]["comment"] = " // Data size"
 defs["structs"]["ImGuiPayload"][2]["name"] = "DataSize"
 defs["structs"]["ImGuiPayload"][2]["type"] = "int"
 defs["structs"]["ImGuiPayload"][3] = {}
-defs["structs"]["ImGuiPayload"][3]["comment"] = " // Source item id"
+defs["structs"]["ImGuiPayload"][3]["comment"] = "\
+    // [Internal] // Source item id"
 defs["structs"]["ImGuiPayload"][3]["name"] = "SourceId"
 defs["structs"]["ImGuiPayload"][3]["type"] = "ImGuiID"
 defs["structs"]["ImGuiPayload"][4] = {}
@@ -2499,10 +2512,7 @@ defs["structs"]["ImGuiSizeCallbackData"][4]["name"] = "DesiredSize"
 defs["structs"]["ImGuiSizeCallbackData"][4]["type"] = "ImVec2"
 defs["structs"]["ImGuiStorage"] = {}
 defs["structs"]["ImGuiStorage"][1] = {}
-defs["structs"]["ImGuiStorage"][1]["comment"] = "\
-    // - Get***() functions find pair, never add/allocate. Pairs are sorted so a query is O(log N)\
-    // - Set***() functions find pair, insertion on demand if missing.\
-    // - Sorted insertion is costly, paid once. A typical frame shouldn't need to insert any new pair."
+defs["structs"]["ImGuiStorage"][1]["comment"] = ""
 defs["structs"]["ImGuiStorage"][1]["name"] = "Data"
 defs["structs"]["ImGuiStorage"][1]["template_type"] = "Pair"
 defs["structs"]["ImGuiStorage"][1]["type"] = "ImVector_Pair"

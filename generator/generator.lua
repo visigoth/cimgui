@@ -446,10 +446,12 @@ end
 local function cimgui_generation(parser)
 	cpp2ffi.prtable(parser.templates)
 	cpp2ffi.prtable(parser.typenames)
-	-- clean ImVector:contains() for not applicable types
+	-- clean ImVector:contains, find, find_erase, and find_erase_unsorted
+	-- for not applicable types
+
 	local clean_f = {}
 	for k,v in pairs(parser.defsT) do
-		if k:match"ImVector" and k:match"contains" then
+		if k:match"ImVector" and (k:match"contains" or k:match"find") then
 			--cpp2ffi.prtable(k,v)
 			local stname = v[1].stname
 			if not(stname:match"float" or stname:match"int" or stname:match"char") then
@@ -458,12 +460,19 @@ local function cimgui_generation(parser)
 				for i,t in ipairs(parser.funcdefs) do
 					if t.cimguiname == k then
 						table.remove(parser.funcdefs, i)
-						break
 					end
 				end
 			end
 		end
 	end
+
+  -- for some reason, ImVector_find does not get fully removed (probably because
+  -- it has two overloads).
+  for i,t in ipairs(parser.funcdefs) do
+    if t.cimguiname == "ImVector_find" then
+      table.remove(parser.funcdefs, i)
+    end
+  end
 	
 	--------------------------------------------------
     local hstrfile = read_data"./cimgui_template.h"
